@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Quantum"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/txtFragmeUno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Registar Datos"
+        android:textSize="20sp" />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@null"
+        android:hint="Nombre"
+        android:padding="5dp"
+        android:singleLine="true"
+        android:id="@+id/name" />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@null"
+        android:hint="Apellido"
+        android:padding="5dp"
+        android:singleLine="true"
+        android:id="@+id/apellido" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@null"
+        android:hint="Email"
+        android:padding="5dp"
+        android:singleLine="true"
+        android:id="@+id/email" />
+
+    <Button
+        android:id="@+id/button_fragment_uno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Registrar"/>
+
+
+</LinearLayout>
