@@ -1,88 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="fill_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/colorQTurq" >
+    android:background="@color/colorWhite" >
 
 
     <ImageView
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="40sp"
-        android:src="@drawable/logo_quantum"/>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:background="@null"
-        android:hint="IMEI"
-        android:padding="5dp"
-        android:singleLine="true"
-        android:textColorHint="@color/colorWhite"
-        android:id="@+id/imei"/>
-
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:background="@null"
-        android:hint="Nombre"
-        android:padding="5dp"
-        android:singleLine="true"
-        android:textColorHint="@color/colorWhite"
-        android:id="@+id/name" />
-
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:background="@null"
-        android:hint="Apellido"
-        android:padding="5dp"
-        android:singleLine="true"
-        android:textColorHint="@color/colorWhite"
-        android:id="@+id/apellido" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:background="@null"
-        android:hint="Email"
-        android:padding="5dp"
-        android:singleLine="true"
-        android:textColorHint="@color/colorWhite"
-        android:id="@+id/email" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:background="@null"
-        android:hint="Telefono"
-        android:padding="5dp"
-        android:singleLine="true"
-        android:textColorHint="@color/colorWhite"
-        android:inputType="number"
-        android:id="@+id/telefono"/>
-
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:prompt="@string/spinner_title" />
-
-    <Button
-        android:id="@+id/button_fragment_uno"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Ingresar"
-        android:textColor="@color/cardview_dark_background"/>
+        android:layout_height="fill_parent"
+        android:src="@drawable/welcome_logo" />
 
 
 </LinearLayout>

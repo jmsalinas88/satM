@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@color/colorWhite" >
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/logo_quantum_jpg" />
+
+    <EditText
+        android:id="@+id/imei"
+        style="@style/Base.Widget.MaterialComponents.TextInputEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:hint="IMEI"
+        android:padding="5dp"
+        android:singleLine="true"
+        android:textColorHint="@color/colorQTextGrey" />
+
+
+    <EditText
+        android:id="@+id/name"
+        style="@style/Base.Widget.MaterialComponents.TextInputEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@null"
+        android:hint="Nombre"
+        android:padding="5dp"
+        android:singleLine="true"
+        android:textColorHint="@color/colorQTextGrey" />
+
+
+    <EditText
+        android:id="@+id/apellido"
+        style="@style/Base.Widget.MaterialComponents.TextInputEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@null"
+        android:hint="Apellido"
+        android:padding="5dp"
+        android:singleLine="true"
+        android:textColorHint="@color/colorQTextGrey" />
+
+    <EditText
+        android:id="@+id/email"
+        style="@style/Base.Widget.MaterialComponents.TextInputEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@null"
+        android:hint="Email"
+        android:padding="5dp"
+        android:singleLine="true"
+        android:textColorHint="@color/colorQTextGrey" />
+
+    <EditText
+        android:id="@+id/telefono"
+        style="@style/Base.Widget.MaterialComponents.TextInputEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@null"
+        android:hint="Telefono"
+        android:inputType="number"
+        android:padding="5dp"
+        android:singleLine="true"
+        android:textColorHint="@color/colorQTextGrey"/>
+
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:prompt="@string/spinner_title"
+        android:spinnerMode="dialog"
+        style="@style/localityITem"/>
+
+    <Button
+        android:id="@+id/button_fragment_uno"
+        style="@android:style/Widget.DeviceDefault.Light.Button"
+        android:layout_width="148dp"
+        android:layout_height="58dp"
+        android:gravity="center"
+        android:text="Ingresar"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+        android:textColor="@color/colorQTextGrey" />
+
+
+</LinearLayout>
