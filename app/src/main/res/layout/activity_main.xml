@@ -6,11 +6,9 @@
     android:orientation="vertical"
     android:background="@color/colorWhite" >
 
-
     <ImageView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:src="@drawable/welcome_logo" />
-
 
 </LinearLayout>

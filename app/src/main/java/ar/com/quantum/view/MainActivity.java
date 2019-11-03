@@ -6,8 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import ar.com.quantum.satm.R;
 
-public class MainActivity extends AppCompatActivity {
-
+public class MainActivity extends BaseActivity {
 
     private static long WELCOME_TIMEOUT = 3000;
 

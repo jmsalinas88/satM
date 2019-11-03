@@ -1,26 +1,25 @@
 package ar.com.quantum.view;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.AdapterView.OnItemSelectedListener;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import ar.com.quantum.satm.R;
 
-public class SingInActivity extends AppCompatActivity implements OnItemSelectedListener {
+public class SingInActivity extends BaseActivity implements OnItemSelectedListener {
+
+    private final String TOOL_BAR_TILTE = "Dejanos tu contacto";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.singinactivity);
-
+        this.setCommonsToolbarTitle(R.id.singInToolbar,TOOL_BAR_TILTE);
         // Spinner element
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
 

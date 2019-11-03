@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="fill_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:orientation="vertical"
     android:background="@color/colorWhite" >
 
+    <include android:id="@+id/singInToolbar"  layout="@layout/toolbar" />
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="150dp"
         android:src="@drawable/logo_quantum_jpg" />
 
     <EditText
@@ -24,7 +24,6 @@
         android:singleLine="true"
         android:textColorHint="@color/colorQTextGrey" />
 
-
     <EditText
         android:id="@+id/name"
         style="@style/Base.Widget.MaterialComponents.TextInputEditText"
@@ -36,7 +35,6 @@
         android:padding="5dp"
         android:singleLine="true"
         android:textColorHint="@color/colorQTextGrey" />
-
 
     <EditText
         android:id="@+id/apellido"
@@ -78,21 +76,27 @@
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:prompt="@string/spinner_title"
         android:spinnerMode="dialog"
         style="@style/localityITem"/>
 
-    <Button
-        android:id="@+id/button_fragment_uno"
-        style="@android:style/Widget.DeviceDefault.Light.Button"
-        android:layout_width="148dp"
-        android:layout_height="58dp"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Ingresar"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
-        android:textColor="@color/colorQTextGrey" />
+        android:orientation="vertical" >
 
+        <Button
+            android:id="@+id/buttonIngresar"
+            style="@android:style/Widget.DeviceDefault.Light.Button"
+            android:layout_width="196dp"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="Ingresar"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+            android:textColor="@color/colorQTextGrey" />
+    </LinearLayout>
 
 </LinearLayout>

@@ -6,6 +6,7 @@
         <item name="colorPrimary">@color/colorQTurq</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="titleTextColor">@color/colorWhite</item>
     </style>
 
     <style name="localityITem">
