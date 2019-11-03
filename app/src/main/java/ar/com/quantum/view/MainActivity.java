@@ -9,7 +9,7 @@ import ar.com.quantum.satm.R;
 public class MainActivity extends AppCompatActivity {
 
 
-    private static long WELCOME_TIMEOUT = 4000;
+    private static long WELCOME_TIMEOUT = 3000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent welcome = new Intent(MainActivity.this, SingInActivity.class);
+                Intent welcome = new Intent(MainActivity.this, ModelsActivity.class);
                 startActivity(welcome);
                 finish();
             }
