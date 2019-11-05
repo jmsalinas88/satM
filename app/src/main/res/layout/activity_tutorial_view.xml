@@ -8,11 +8,6 @@
 
     <include layout="@layout/toolbar" android:id="@+id/tutorialToolbar"/>
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:src="@drawable/logo_quantum_jpg" />
-
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
