@@ -1,10 +1,11 @@
 package ar.com.quantum.view;
 
-import androidx.appcompat.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.AdapterView.OnItemSelectedListener;
 import java.util.ArrayList;
@@ -18,7 +19,7 @@ public class SingInActivity extends BaseActivity implements OnItemSelectedListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.singinactivity);
+        setContentView(R.layout.singinactivity_view);
         this.setCommonsToolbarTitle(R.id.singInToolbar,TOOL_BAR_TILTE);
         // Spinner element
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
@@ -49,6 +50,15 @@ public class SingInActivity extends BaseActivity implements OnItemSelectedListen
 
         // attaching data adapter to spinner
         spinner.setAdapter(dataAdapter);
+
+        final Button button = (Button) findViewById(R.id.buttonIngresar);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent symptom = new Intent(SingInActivity.this, SymptomActivity.class);
+                startActivity(symptom);
+                finish();
+            }
+        });
 
     }
 
