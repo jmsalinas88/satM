@@ -26,26 +26,15 @@ public class SymptomActivity extends BaseActivity {
         setContentView(R.layout.activity_symptom_view);
         super.setCommonsToolbarTitle(R.id.symptomToolbar,TOOL_BAR_TILTE);
 
-
         ListView symptomListView = (ListView)findViewById(R.id.symptomListView);
-
-
-        Symptom s1 = new Symptom("BATERIA", 0);
-        Symptom s2 = new Symptom("ENCENDIDO", 0);
-        Symptom s3 = new Symptom("PANTALLA", 0);
-        Symptom s4 = new Symptom("RED", 0);
-        Symptom s5 = new Symptom("AUDIO", 0);
-        Symptom s6 = new Symptom("CAMARA", 0);
+        Symptom s1 = new Symptom("DURACION DE BATERIA");
+        Symptom s2 = new Symptom("BATERIA NO CARGA");
+        Symptom s3 = new Symptom("BATERIA HINCHADA");
 
         List<Symptom> symptomList  = new ArrayList<Symptom>();
-
         symptomList.add(s1);
         symptomList.add(s2);
         symptomList.add(s3);
-        symptomList.add(s4);
-        symptomList.add(s5);
-        symptomList.add(s6);
-
 
         SymptomListAdapter adapter = new SymptomListAdapter(this,R.layout.symptom_item_layout, symptomList);
 

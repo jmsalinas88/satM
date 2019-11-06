@@ -54,7 +54,7 @@ public class SingInActivity extends BaseActivity implements OnItemSelectedListen
         final Button button = (Button) findViewById(R.id.buttonIngresar);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent symptom = new Intent(SingInActivity.this, SymptomActivity.class);
+                Intent symptom = new Intent(SingInActivity.this, FeatureActivity.class);
                 startActivity(symptom);
                 finish();
             }

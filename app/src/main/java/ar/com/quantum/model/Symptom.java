@@ -3,13 +3,11 @@ package ar.com.quantum.model;
 public class Symptom {
 
     private String description = null;
-    private Integer image = null;
 
     public Symptom() {}
 
-    public Symptom(String description, Integer image) {
+    public Symptom(String description) {
         this.description = description;
-        this.image = image;
     }
 
     public String getDescription() {
@@ -20,11 +18,4 @@ public class Symptom {
         this.description = description;
     }
 
-    public Integer getImage() {
-        return image;
-    }
-
-    public void setImage(Integer image) {
-        this.image = image;
-    }
 }

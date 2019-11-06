@@ -12,13 +12,12 @@ import androidx.annotation.Nullable;
 import java.util.List;
 import ar.com.quantum.satm.R;
 
-public class SymptomListAdapter extends ArrayAdapter<Symptom> {
-
+public class FeactureListAdapter  extends ArrayAdapter<Feacture> {
 
     private Context mContext = null;
     private Integer mResource = null;
 
-    public SymptomListAdapter(@NonNull Context context, int resource, @NonNull List<Symptom> objects) {
+    public FeactureListAdapter(@NonNull Context context, int resource, @NonNull List<Feacture> objects) {
         super(context, resource, objects);
         mContext = context;
         mResource = resource;
@@ -27,12 +26,13 @@ public class SymptomListAdapter extends ArrayAdapter<Symptom> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         // get symptom information
-        Symptom symptom = new Symptom(getItem(position).getDescription());
+        Feacture feacture = new Feacture(getItem(position).getDescription(), getItem(position).getImage());
         LayoutInflater inflater = LayoutInflater.from(mContext);
         convertView = inflater.inflate(mResource, parent, false);
-        TextView textViewSymptomDescription = (TextView)convertView.findViewById(R.id.textViewSymptomDescription);
-        textViewSymptomDescription.setText(symptom.getDescription());
+        ImageView imageViewSymptom = (ImageView)convertView.findViewById(R.id.imageViewFeature);
+        imageViewSymptom.setImageResource(feacture.getImage());
+        TextView textViewSymptomDescription = (TextView)convertView.findViewById(R.id.textViewFeatureDescription);
+        textViewSymptomDescription.setText(feacture.getDescription());
         return convertView;
     }
-
 }
