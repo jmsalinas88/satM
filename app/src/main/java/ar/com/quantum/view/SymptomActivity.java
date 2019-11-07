@@ -9,8 +9,6 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
 
-import ar.com.quantum.model.Equipment;
-import ar.com.quantum.model.EquipmentListAdapter;
 import ar.com.quantum.model.Symptom;
 import ar.com.quantum.model.SymptomListAdapter;
 import ar.com.quantum.satm.R;
@@ -23,7 +21,7 @@ public class SymptomActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_symptom_view);
+        setContentView(R.layout.symptom_view);
         super.setCommonsToolbarTitle(R.id.symptomToolbar,TOOL_BAR_TILTE);
 
         ListView symptomListView = (ListView)findViewById(R.id.symptomListView);

@@ -1,7 +1,5 @@
 package ar.com.quantum.view;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,8 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 import ar.com.quantum.model.Feacture;
 import ar.com.quantum.model.FeactureListAdapter;
-import ar.com.quantum.model.Symptom;
-import ar.com.quantum.model.SymptomListAdapter;
 import ar.com.quantum.satm.R;
 
 public class FeatureActivity extends BaseActivity {
@@ -24,7 +20,7 @@ public class FeatureActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_feature_view);
+        setContentView(R.layout.feature_view);
         super.setCommonsToolbarTitle(R.id.symptomToolbar,TOOL_BAR_TILTE);
 
         ListView feactureListView = (ListView)findViewById(R.id.featureListView);

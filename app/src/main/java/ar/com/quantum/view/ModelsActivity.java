@@ -1,13 +1,9 @@
 package ar.com.quantum.view;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.BaseAdapter;
 import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +18,7 @@ public class ModelsActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_models_view);
+        setContentView(R.layout.models_view);
         this.setCommonsToolbarTitle(R.id.modelsToolbar, TOOL_BAR_TILTE);
 
         ListView modelsListView = (ListView)findViewById(R.id.modelListView);

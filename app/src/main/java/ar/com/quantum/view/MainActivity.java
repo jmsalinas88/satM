@@ -12,7 +12,7 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_view);
+        setContentView(R.layout.main_view);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

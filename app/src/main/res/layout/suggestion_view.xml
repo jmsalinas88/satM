@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorWhite" >
+
+    <include layout="@layout/toolbar" android:id="@+id/symptomToolbar"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="@drawable/logo_quantum_jpg" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Aca va alguna recomendacion para el usuario"
+        android:gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/buttonIngresar"
+            style="@android:style/Widget.DeviceDefault.Light.Button"
+            android:layout_width="196dp"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="Volver al menu principal"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+            android:textColor="@color/colorQTextGrey" />
+    </LinearLayout>
+
+</LinearLayout>

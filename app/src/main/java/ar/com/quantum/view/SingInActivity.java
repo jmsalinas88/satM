@@ -19,7 +19,7 @@ public class SingInActivity extends BaseActivity implements OnItemSelectedListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.singinactivity_view);
+        setContentView(R.layout.singin_view);
         this.setCommonsToolbarTitle(R.id.singInToolbar,TOOL_BAR_TILTE);
         // Spinner element
         Spinner spinner = (Spinner) findViewById(R.id.spinner);

@@ -1,14 +1,11 @@
 package ar.com.quantum.view;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import ar.com.quantum.model.Symptom;
-import ar.com.quantum.model.SymptomListAdapter;
 import ar.com.quantum.model.Tutorial;
 import ar.com.quantum.model.TutorialListAdapter;
 import ar.com.quantum.satm.R;
@@ -21,7 +18,7 @@ public class TutorialActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tutorial_view);
+        setContentView(R.layout.tutorial_view);
         super.setCommonsToolbarTitle(R.id.tutorialToolbar, TOOL_BAR_TILTE);
         ListView tutorialListView = (ListView)findViewById(R.id.tutorialListView);
 
