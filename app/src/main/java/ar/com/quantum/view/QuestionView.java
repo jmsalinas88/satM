@@ -1,16 +1,14 @@
 package ar.com.quantum.view;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
 import ar.com.quantum.satm.R;
 
-public class SupportActivity extends BaseActivity {
+public class QuestionView extends BaseView {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.support_view);
+        setContentView(R.layout.question_view);
     }
 }

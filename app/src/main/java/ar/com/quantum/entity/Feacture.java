@@ -1,4 +1,4 @@
-package ar.com.quantum.model;
+package ar.com.quantum.entity;
 
 public class Feacture {
 

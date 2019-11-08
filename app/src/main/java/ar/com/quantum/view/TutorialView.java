@@ -6,11 +6,11 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
 
-import ar.com.quantum.model.Tutorial;
-import ar.com.quantum.model.TutorialListAdapter;
+import ar.com.quantum.entity.Tutorial;
+import ar.com.quantum.entity.TutorialListAdapter;
 import ar.com.quantum.satm.R;
 
-public class TutorialActivity extends BaseActivity {
+public class TutorialView extends BaseView {
 
     private final String TOOL_BAR_TILTE = "Diagnostica tu equipo";
 

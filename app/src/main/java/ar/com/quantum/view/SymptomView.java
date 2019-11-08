@@ -9,11 +9,11 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
 
-import ar.com.quantum.model.Symptom;
-import ar.com.quantum.model.SymptomListAdapter;
+import ar.com.quantum.entity.Symptom;
+import ar.com.quantum.entity.SymptomListAdapter;
 import ar.com.quantum.satm.R;
 
-public class SymptomActivity extends BaseActivity {
+public class SymptomView extends BaseView {
 
     private final String TOOL_BAR_TILTE = "Diagnostica tu equipo";
 
@@ -42,7 +42,7 @@ public class SymptomActivity extends BaseActivity {
         symptomListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent singIn = new Intent(SymptomActivity.this, TutorialActivity.class);
+                Intent singIn = new Intent(SymptomView.this, TutorialView.class);
                 startActivity(singIn);
                 finish();
 

@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import ar.com.quantum.satm.R;
 
-public class MainActivity extends BaseActivity {
+public class MainView extends BaseView {
 
     private static long WELCOME_TIMEOUT = 3000;
 
@@ -16,7 +16,7 @@ public class MainActivity extends BaseActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent welcome = new Intent(MainActivity.this, ModelsActivity.class);
+                Intent welcome = new Intent(MainView.this, EquipmentView.class);
                 startActivity(welcome);
                 finish();
             }

@@ -1,12 +1,10 @@
 package ar.com.quantum.view;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
 import ar.com.quantum.satm.R;
 
-public class SuggestionActivity extends BaseActivity {
+public class SuggestionView extends BaseView {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

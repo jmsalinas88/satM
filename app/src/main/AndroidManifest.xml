@@ -9,22 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="ar.com.quantum.view.IssueActivity"></activity>
-        <activity android:name="ar.com.quantum.view.SupportActivity" />
-        <activity android:name="ar.com.quantum.view.SuggestionActivity" />
-        <activity android:name="ar.com.quantum.view.QuestionActivity" />
-        <activity android:name="ar.com.quantum.view.FeatureActivity" />
-        <activity android:name="ar.com.quantum.view.TutorialActivity" />
-        <activity android:name="ar.com.quantum.view.SymptomActivity" />
-        <activity android:name="ar.com.quantum.view.MainActivity">
+        <activity android:name="ar.com.quantum.view.IssueView"></activity>
+        <activity android:name="ar.com.quantum.view.SupportView" />
+        <activity android:name="ar.com.quantum.view.SuggestionView" />
+        <activity android:name="ar.com.quantum.view.QuestionView" />
+        <activity android:name="ar.com.quantum.view.FeatureView" />
+        <activity android:name="ar.com.quantum.view.TutorialView" />
+        <activity android:name="ar.com.quantum.view.SymptomView" />
+        <activity android:name="ar.com.quantum.view.MainView">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="ar.com.quantum.view.ModelsActivity" />
-        <activity android:name="ar.com.quantum.view.SingInActivity">
+        <activity android:name="ar.com.quantum.view.EquipmentView" />
+        <activity android:name="ar.com.quantum.view.SingInView">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

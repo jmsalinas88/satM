@@ -1,4 +1,4 @@
-package ar.com.quantum.model;
+package ar.com.quantum.entity;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,7 +10,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import java.util.List;
-import java.util.zip.Inflater;
 import ar.com.quantum.satm.R;
 
 public class EquipmentListAdapter extends ArrayAdapter<Equipment> {

@@ -1,10 +1,11 @@
-package ar.com.quantum.model;
+package ar.com.quantum.entity;
 
 public class Equipment {
 
-    private String name = null;
-    private String description = null;
-    private Integer image = null;
+    private String name;
+    private String description;
+    private Integer image;
+    private String emei;
 
     public Equipment() {}
 
@@ -38,4 +39,11 @@ public class Equipment {
         this.image = image;
     }
 
+    public String getEmei() {
+        return emei;
+    }
+
+    public void setEmei(String emei) {
+        this.emei = emei;
+    }
 }

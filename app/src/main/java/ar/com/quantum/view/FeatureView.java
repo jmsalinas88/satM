@@ -7,11 +7,11 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
-import ar.com.quantum.model.Feacture;
-import ar.com.quantum.model.FeactureListAdapter;
+import ar.com.quantum.entity.Feacture;
+import ar.com.quantum.entity.FeactureListAdapter;
 import ar.com.quantum.satm.R;
 
-public class FeatureActivity extends BaseActivity {
+public class FeatureView extends BaseView {
 
     private final String TOOL_BAR_TILTE = "Diagnostica tu equipo";
 
@@ -51,7 +51,7 @@ public class FeatureActivity extends BaseActivity {
         feactureListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent singIn = new Intent(FeatureActivity.this, SymptomActivity.class);
+                Intent singIn = new Intent(FeatureView.this, SymptomView.class);
                 startActivity(singIn);
                 finish();
 
