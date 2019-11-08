@@ -1,13 +1,13 @@
 package ar.com.quantum.entity;
 
-public class Feacture {
+public class Feature {
 
     private String description = null;
     private Integer image = null;
 
-    public Feacture() {}
+    public Feature() {}
 
-    public Feacture(String description, Integer image) {
+    public Feature(String description, Integer image) {
         this.description = description;
         this.image = image;
     }

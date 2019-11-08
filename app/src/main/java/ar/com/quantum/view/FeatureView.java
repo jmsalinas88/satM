@@ -7,8 +7,8 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
-import ar.com.quantum.entity.Feacture;
-import ar.com.quantum.entity.FeactureListAdapter;
+import ar.com.quantum.entity.Feature;
+import ar.com.quantum.entity.FeatureListAdapter;
 import ar.com.quantum.satm.R;
 
 public class FeatureView extends BaseView {
@@ -26,14 +26,14 @@ public class FeatureView extends BaseView {
         ListView feactureListView = (ListView)findViewById(R.id.featureListView);
 
 
-        Feacture s1 = new Feacture("BATERIA", 0);
-        Feacture s2 = new Feacture("ENCENDIDO", 0);
-        Feacture s3 = new Feacture("PANTALLA", 0);
-        Feacture s4 = new Feacture("RED", 0);
-        Feacture s5 = new Feacture("AUDIO", 0);
-        Feacture s6 = new Feacture("CAMARA", 0);
+        Feature s1 = new Feature("BATERIA", 0);
+        Feature s2 = new Feature("ENCENDIDO", 0);
+        Feature s3 = new Feature("PANTALLA", 0);
+        Feature s4 = new Feature("RED", 0);
+        Feature s5 = new Feature("AUDIO", 0);
+        Feature s6 = new Feature("CAMARA", 0);
 
-        List<Feacture> featureList  = new ArrayList<Feacture>();
+        List<Feature> featureList  = new ArrayList<Feature>();
 
         featureList.add(s1);
         featureList.add(s2);
@@ -43,7 +43,7 @@ public class FeatureView extends BaseView {
         featureList.add(s6);
 
 
-        FeactureListAdapter adapter = new FeactureListAdapter(this,R.layout.feature_item_layout, featureList);
+        FeatureListAdapter adapter = new FeatureListAdapter(this,R.layout.feature_item_layout, featureList);
 
         feactureListView.setAdapter(adapter);
 
