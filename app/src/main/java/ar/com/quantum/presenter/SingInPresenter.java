@@ -47,8 +47,11 @@ public class SingInPresenter extends BasePresenter implements ISingIn.Presenter{
         }
         else
         {
-            this.sinInview.loginSucess();
-
+            try {
+                 this.sinInview.loginSucess();
+            }catch (Exception e){
+                  this.sinInview.loginError();
+            }
         }
 
     }

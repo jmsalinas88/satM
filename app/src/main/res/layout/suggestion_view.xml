@@ -23,17 +23,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:orientation="vertical" >
+        android:orientation="vertical"
+        android:padding="10dp">
 
         <Button
-            android:id="@+id/buttonIngresar"
-            style="@android:style/Widget.DeviceDefault.Light.Button"
-            android:layout_width="196dp"
-            android:layout_height="60dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_button"
             android:gravity="center"
             android:text="Volver al menu principal"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
-            android:textColor="@color/colorQTextGrey" />
+            android:padding="10dp"
+            android:textColor="@color/colorWhite" />
+
     </LinearLayout>
 
 </LinearLayout>

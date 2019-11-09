@@ -1,6 +1,8 @@
 package ar.com.quantum.model;
 
 import android.content.Context;
+
+import java.util.ArrayList;
 import java.util.List;
 
 import ar.com.quantum.dao.ProvinceDAOImpl;
@@ -24,7 +26,7 @@ public class SingInModel extends BaseModel implements ISingIn.Model {
     }
 
     private List<String> getAllProvinces(){
-        ProvinceDAOImpl provinceDAO = new ProvinceDAOImpl(this.mContext);
-        return provinceDAO.getAllStr();
+        ProvinceDAOImpl dao = new ProvinceDAOImpl(this.mContext);
+        return dao.getAllStr();
     }
 }

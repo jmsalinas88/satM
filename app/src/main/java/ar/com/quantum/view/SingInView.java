@@ -25,8 +25,7 @@ import android.widget.Toast;
 
 public class SingInView extends BaseView implements ISingIn.View{
 
-    private final String TOOL_BAR_TILTE = "Dejanos tu contacto";
-
+    private final Integer STEP = 1;
     private ISingIn.Presenter presenter;
     private Spinner provinces;
     private EditText imei;
@@ -41,7 +40,7 @@ public class SingInView extends BaseView implements ISingIn.View{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.singin_view);
-        this.setCommonsToolbarTitle(R.id.singInToolbar,TOOL_BAR_TILTE);
+        this.setCommonsToolbarTitle(R.id.singInToolbar,TITLES_BY_STEP[STEP]);
         this.provinces = (Spinner) findViewById(R.id.provinces);
         this.imei = (EditText)findViewById(R.id.imei);
         this.name = (EditText)findViewById(R.id.name);
@@ -61,11 +60,15 @@ public class SingInView extends BaseView implements ISingIn.View{
         user.setSurname(this.surname.getText().toString().trim());
         user.setEmail(this.email.getText().toString().trim());
         user.setPhoneNumber(this.phoneNumber.getText().toString().trim());
-        Equipment equipment = new Equipment();
-        String equipmentName = getIntent().getStringExtra("EXTRA_EQUIPMENT_SELECTED");
+        Equipment equipment = (Equipment)getIntent().getSerializableExtra(INTENT_EQUIPMENT_KEY);
         equipment.setEmei(this.imei.getText().toString().trim());
-        equipment.setName(equipmentName);
         user.setEquipment(equipment);
+        Province province = new Province(this.provinces.getSelectedItem().toString());
+        user.setProvince(province);
+
+        System.out.println(" Equipo: " + equipment.getName());
+        System.out.println(" Provincia: " + province.getDescription());
+
         this.presenter.performLogin(user);
     }
 

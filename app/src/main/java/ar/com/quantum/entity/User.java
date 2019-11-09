@@ -1,13 +1,27 @@
 package ar.com.quantum.entity;
 
-public class User {
 
+import androidx.room.Entity;
+import androidx.room.ForeignKey;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
+
+@Entity
+public class User{
+
+    @PrimaryKey(autoGenerate = true)
+    private Long id;
+    @Ignore
     private Province province;
+    private Long provinceId;
+    @Ignore
     private Equipment equipment;
+    private Long equipmentId;
     private String namne;
     private String surname;
     private String email;
     private String phoneNumber;
+
 
     public User(){}
 
@@ -67,4 +81,29 @@ public class User {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getProvinceId() {
+        return provinceId;
+    }
+
+    public void setProvinceId(Long provinceId) {
+        this.provinceId = provinceId;
+    }
+
+    public Long getEquipmentId() {
+        return equipmentId;
+    }
+
+    public void setEquipmentId(Long equipmentId) {
+        this.equipmentId = equipmentId;
+    }
+
 }

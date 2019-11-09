@@ -46,7 +46,7 @@ public class ProvinceDAOImpl extends BaseDAO<Province> implements  IDAO<Province
     public List<String> getAllStr() {
 
         List<String> provinceList = new ArrayList<String>();
-
+        provinceList.add(new Province("Ciudad Autónoma de Buenos Aires").getDescription());
         provinceList.add(new Province("Misiones").getDescription());
         provinceList.add(new Province("San Luis").getDescription());
         provinceList.add(new Province("San Juan").getDescription());
@@ -68,9 +68,14 @@ public class ProvinceDAOImpl extends BaseDAO<Province> implements  IDAO<Province
         provinceList.add(new Province("Salta").getDescription());
         provinceList.add(new Province("Formosa").getDescription());
         provinceList.add(new Province("Jujuy").getDescription());
-        provinceList.add(new Province("Ciudad Autónoma de Buenos Aires").getDescription());
         provinceList.add(new Province("Buenos Aires").getDescription());
         provinceList.add(new Province("Tierra del Fuego").getDescription());
+
+       /*for (String p: provinceList) {
+            Province prov = new Province(p);
+            prov.save();
+        }*/
+        
 
         return provinceList;
     }

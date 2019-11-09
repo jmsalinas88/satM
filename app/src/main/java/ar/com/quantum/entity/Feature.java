@@ -1,7 +1,13 @@
 package ar.com.quantum.entity;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity
 public class Feature {
 
+    @PrimaryKey(autoGenerate = true)
+    private Long id;
     private String description = null;
     private Integer image = null;
 
@@ -26,5 +32,13 @@ public class Feature {
 
     public void setImage(Integer image) {
         this.image = image;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }

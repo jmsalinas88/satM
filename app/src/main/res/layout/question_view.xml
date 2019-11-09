@@ -16,17 +16,23 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="¿La bateria de encuentra hinchada?"
-        android:gravity="center"/>
+        android:text="¿Duracion de bateria mayor a cuatro horas?"
+        android:textSize="30dp"
+        android:textColor="@color/colorQTurq"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:padding="10dp"/>
 
-
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:src="@drawable/quantum_q_t_4" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:weightSum="100"
-        android:paddingBottom="10dp">
+        android:padding="30dp">
 
         <LinearLayout
             android:layout_width="0dp"
@@ -39,7 +45,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@color/colorQTurq"
+                android:background="@drawable/rounded_button"
                 android:gravity="center"
                 android:text="Si"
                 android:paddingTop="10dp"
@@ -58,7 +64,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@color/colorQTurq"
+                android:background="@drawable/rounded_button"
                 android:gravity="center"
                 android:text="No"
                 android:paddingTop="10dp"
@@ -67,7 +73,5 @@
         </LinearLayout>
 
     </LinearLayout>
-
-
 
 </LinearLayout>

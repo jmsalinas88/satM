@@ -54,6 +54,7 @@ public class EquipmentDAOImpl extends BaseDAO <Equipment> implements IDAO<Equipm
         equipmentList.add(qV);
         equipmentList.add(qYou);
 
+
         return equipmentList;
     }
 }
