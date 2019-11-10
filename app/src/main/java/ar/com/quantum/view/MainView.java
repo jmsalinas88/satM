@@ -23,7 +23,7 @@ public class MainView extends BaseView {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent welcome = new Intent(MainView.this, QuestionView.class);
+                Intent welcome = new Intent(MainView.this, EquipmentView.class);
                 startActivity(welcome);
                 finish();
             }

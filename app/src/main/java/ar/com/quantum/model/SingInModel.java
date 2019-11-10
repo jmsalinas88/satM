@@ -26,7 +26,19 @@ public class SingInModel extends BaseModel implements ISingIn.Model {
     }
 
     private List<String> getAllProvinces(){
-        ProvinceDAOImpl dao = new ProvinceDAOImpl(this.mContext);
-        return dao.getAllStr();
+
+        List<String> provinceList = new ArrayList<String>();
+        provinceList.add("Ciudad Autónoma de Buenos Aires");
+        provinceList.add("Misiones");
+        provinceList.add("San Luis");
+        provinceList.add("San Juan");
+        provinceList.add("Entre Ríos");
+        provinceList.add("Entre Ríos");
+        provinceList.add("Santa Cruz");
+        provinceList.add("Río Negro");
+        provinceList.add("Chubut");
+
+        return  provinceList;
+
     }
 }

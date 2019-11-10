@@ -1,20 +1,17 @@
 package ar.com.quantum.entity;
 
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity
 public class Province {
 
     @PrimaryKey(autoGenerate = true)
-    private Long id;
+    private Integer id;
     private String description;
 
     public  Province(){}
-
-    public  Province(String description){
-        this.description = description;
-    }
 
     public String getDescription() {
         return description;
@@ -24,11 +21,11 @@ public class Province {
         this.description = description;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

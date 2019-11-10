@@ -10,45 +10,16 @@ import androidx.room.PrimaryKey;
 public class User{
 
     @PrimaryKey(autoGenerate = true)
-    private Long id;
-    @Ignore
-    private Province province;
-    private Long provinceId;
-    @Ignore
-    private Equipment equipment;
-    private Long equipmentId;
+    private Integer id;
+    private Integer provinceId;
+    private Integer equipmentId;
     private String namne;
     private String surname;
     private String email;
     private String phoneNumber;
-
+    private String emei;
 
     public User(){}
-
-    public User(Province province, Equipment equipment, String namne, String surname, String email, String phoneNumber) {
-        this.province = province;
-        this.equipment = equipment;
-        this.namne = namne;
-        this.surname = surname;
-        this.email = email;
-        this.phoneNumber = phoneNumber;
-    }
-
-    public Province getProvince() {
-        return province;
-    }
-
-    public void setProvince(Province province) {
-        this.province = province;
-    }
-
-    public Equipment getEquipment() {
-        return equipment;
-    }
-
-    public void setEquipment(Equipment equipment) {
-        this.equipment = equipment;
-    }
 
     public String getNamne() {
         return namne;
@@ -82,28 +53,35 @@ public class User{
         this.phoneNumber = phoneNumber;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public Long getProvinceId() {
+    public Integer getProvinceId() {
         return provinceId;
     }
 
-    public void setProvinceId(Long provinceId) {
+    public void setProvinceId(Integer provinceId) {
         this.provinceId = provinceId;
     }
 
-    public Long getEquipmentId() {
+    public Integer getEquipmentId() {
         return equipmentId;
     }
 
-    public void setEquipmentId(Long equipmentId) {
+    public void setEquipmentId(Integer equipmentId) {
         this.equipmentId = equipmentId;
     }
 
+    public String getEmei() {
+        return emei;
+    }
+
+    public void setEmei(String emei) {
+        this.emei = emei;
+    }
 }

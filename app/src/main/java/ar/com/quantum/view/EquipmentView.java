@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
-
 import java.util.List;
 import ar.com.quantum.entity.Equipment;
 import ar.com.quantum.entity.EquipmentListAdapter;
@@ -31,11 +30,10 @@ public class EquipmentView extends BaseView implements IEquipment.View {
         this.equipmentListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Equipment selectedEquipment = (Equipment)parent.getAdapter().getItem(position);
-                Toast.makeText(EquipmentView.this, selectedEquipment.getName(), Toast.LENGTH_SHORT).show();
+               Equipment selectedEquipment = (Equipment)parent.getAdapter().getItem(position);
+               Toast.makeText(EquipmentView.this, selectedEquipment.getName(), Toast.LENGTH_SHORT).show();
                Intent singIn = new Intent(EquipmentView.this, SingInView.class);
                singIn.putExtra(INTENT_EQUIPMENT_KEY, selectedEquipment);
-
                startActivity(singIn);
                finish();
             }

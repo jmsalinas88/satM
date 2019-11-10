@@ -61,10 +61,11 @@ public class SingInView extends BaseView implements ISingIn.View{
         user.setEmail(this.email.getText().toString().trim());
         user.setPhoneNumber(this.phoneNumber.getText().toString().trim());
         Equipment equipment = (Equipment)getIntent().getSerializableExtra(INTENT_EQUIPMENT_KEY);
-        equipment.setEmei(this.imei.getText().toString().trim());
-        user.setEquipment(equipment);
-        Province province = new Province(this.provinces.getSelectedItem().toString());
-        user.setProvince(province);
+        user.setEmei(this.imei.getText().toString().trim());
+
+        Province province = new Province();
+        province.setDescription(this.provinces.getSelectedItem().toString());
+        user.setProvinceId(1);
 
         System.out.println(" Equipo: " + equipment.getName());
         System.out.println(" Provincia: " + province.getDescription());

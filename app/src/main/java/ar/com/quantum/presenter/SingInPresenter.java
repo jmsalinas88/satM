@@ -2,9 +2,7 @@ package ar.com.quantum.presenter;
 
 import android.content.Context;
 import android.text.TextUtils;
-
 import java.util.List;
-
 import ar.com.quantum.entity.User;
 import ar.com.quantum.model.ISingIn;
 import ar.com.quantum.model.SingInModel;
@@ -36,7 +34,9 @@ public class SingInPresenter extends BasePresenter implements ISingIn.Presenter{
     @Override
     public void performLogin(User user) {
 
-        if(TextUtils.isEmpty(user.getEquipment().getEmei()) ||
+        this.sinInview.loginSucess();
+
+        if(TextUtils.isEmpty(user.getEmei()) ||
            TextUtils.isEmpty(user.getNamne()) ||
            TextUtils.isEmpty(user.getSurname()) ||
            TextUtils.isEmpty(user.getEmail()) ||
@@ -59,7 +59,7 @@ public class SingInPresenter extends BasePresenter implements ISingIn.Presenter{
     private String messageValidations(User user){
         String out = "Ingrese:\n";
 
-        if(TextUtils.isEmpty(user.getEquipment().getEmei()) &&
+        if(TextUtils.isEmpty(user.getEmei()) &&
            TextUtils.isEmpty(user.getNamne()) &&
            TextUtils.isEmpty(user.getSurname()) &&
            TextUtils.isEmpty(user.getEmail()) &&
@@ -70,8 +70,10 @@ public class SingInPresenter extends BasePresenter implements ISingIn.Presenter{
         }
         else
             {
-            if (TextUtils.isEmpty(user.getEquipment().getEmei())) {
+            if (TextUtils.isEmpty(user.getEmei())) {
                 out += " IMEI\n";
+            }else{
+                out += Utils.isValidIMEI(Long.valueOf(user.getEmei())) ? "": " IMEI (debe ser uno valido)\n";
             }
             if (TextUtils.isEmpty(user.getNamne())) {
                 out += " Nombre\n";
@@ -84,7 +86,7 @@ public class SingInPresenter extends BasePresenter implements ISingIn.Presenter{
             }
             else
                 {
-                    out += Utils.validEmail(user.getEmail()) ? "": " Email (debe ser uno valido)\n";
+                    out += Utils.isValidEmail(user.getEmail()) ? "": " Email (debe ser uno valido)\n";
                 }
             if (TextUtils.isEmpty(user.getPhoneNumber())) {
                 out += " Teléfono\n";

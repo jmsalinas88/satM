@@ -13,29 +13,45 @@
         android:layout_height="150dp"
         android:src="@drawable/logo_quantum_jpg" />
 
-    <Spinner
-        android:id="@+id/spinnerSupport"
+
+
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:prompt="@string/spinner_title"
-        android:spinnerMode="dialog"
-        style="@style/localityITem"/>
+        android:text="AV Rivadavia 4025. Quantum Service de lunes a viernes de 09 a 17hs. Capital Federal. Teléfono (011) 49365869."
+        android:textColor="@color/colorQTextGrey"
+        android:gravity="center"
+        android:textStyle="normal"
+        android:padding="10dp"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="- Reinserción e inspección de Batería. - Carga mínima de una hora. - Factory Reset"
+        android:textColor="@color/colorQTextGrey"
+        android:gravity="center"
+        android:padding="10dp"/>
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:orientation="vertical" >
+        android:orientation="vertical"
+        android:padding="5dp">
 
         <Button
-            android:id="@+id/buttonIngresar"
+            android:id="@+id/buttonSingIn"
             style="@android:style/Widget.DeviceDefault.Light.Button"
-            android:layout_width="196dp"
+            android:layout_width="match_parent"
             android:layout_height="60dp"
             android:gravity="center"
-            android:text="Confirmarl"
+            android:text="Confirmar"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
-            android:textColor="@color/colorQTextGrey" />
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/rounded_button"/>
+
     </LinearLayout>
 
 </LinearLayout>

@@ -1,5 +1,6 @@
 package ar.com.quantum.entity;
 
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
@@ -9,21 +10,15 @@ import java.io.Serializable;
 public class Equipment implements Serializable {
 
     @PrimaryKey(autoGenerate = true)
-    private Long id;
+    private Integer id;
     private String name;
     private String description;
-    @Ignore
-    private Integer image;
+    @ColumnInfo(typeAffinity = ColumnInfo.BLOB)
+    public byte[] image;
     private String emei;
 
     public Equipment() {
 
-    }
-
-    public Equipment(String name, String description, Integer image) {
-        this.name = name;
-        this.description = description;
-        this.image = image;
     }
 
     public String getName() {
@@ -42,12 +37,12 @@ public class Equipment implements Serializable {
         this.description = description;
     }
 
-    public Integer getImage() {
-        return image;
+    public Integer getId() {
+        return id;
     }
 
-    public void setImage(Integer image) {
-        this.image = image;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getEmei() {
@@ -58,11 +53,12 @@ public class Equipment implements Serializable {
         this.emei = emei;
     }
 
-    public Long getId() {
-        return id;
+    public byte[] getImage() {
+        return image;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setImage(byte[] image) {
+        this.image = image;
     }
+
 }

@@ -42,7 +42,7 @@ public class EquipmentDAOImpl extends BaseDAO <Equipment> implements IDAO<Equipm
 
         List<Equipment> equipmentList  = new ArrayList<Equipment>();
 
-        Equipment qfit = new Equipment("Quantum Fit", "Android Nougat - Memoria RAM de 1GB - Memoria interna de 16GB", R.drawable.q_fit);
+       /* Equipment qfit = new Equipment("Quantum Fit", "Android Nougat - Memoria RAM de 1GB - Memoria interna de 16GB", R.drawable.q_fit);
         Equipment qM = new Equipment("Quantum M", "Android Nougat - Memoria RAM de 1GB - Memoria interna de 16GB", R.drawable.q_m);
         Equipment qMini = new Equipment("Quantum Mini", "Android Oreo - Memoria RAM de 512MB - Memoria interna de 8GB", R.drawable.q_mini);
         Equipment qV = new Equipment("Quantum V", "Android Nougat - Memoria RAM de 4GB - Memoria interna de 64GB", R.drawable.q_m);
@@ -52,7 +52,7 @@ public class EquipmentDAOImpl extends BaseDAO <Equipment> implements IDAO<Equipm
         equipmentList.add(qM);
         equipmentList.add(qMini);
         equipmentList.add(qV);
-        equipmentList.add(qYou);
+        equipmentList.add(qYou); */
 
 
         return equipmentList;

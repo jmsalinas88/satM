@@ -12,7 +12,8 @@
         android:layout_height="100dp"
         android:layout_weight="66.6"
         android:id="@+id/imageViewModel"
-        android:padding="10dp"/>
+        android:padding="10dp"
+        android:src="@drawable/quantum_q_t_4"/>
 
 
     <LinearLayout

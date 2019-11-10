@@ -24,7 +24,8 @@ public class ProvinceListAdapter extends ArrayAdapter<String> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        Province province = new Province(getItem(position));
+        Province province = new Province();
+        province.setDescription(getItem(position));
         LayoutInflater inflater = LayoutInflater.from(mContext);
         convertView = inflater.inflate(mResource, parent, false);
         return convertView;

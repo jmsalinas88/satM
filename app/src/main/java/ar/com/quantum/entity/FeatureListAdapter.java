@@ -26,11 +26,11 @@ public class FeatureListAdapter extends ArrayAdapter<Feature> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         // get symptom information
-        Feature feature = new Feature(getItem(position).getDescription(), getItem(position).getImage());
+        Feature feature = new Feature();
+        feature.setDescription(getItem(position).getDescription());
         LayoutInflater inflater = LayoutInflater.from(mContext);
         convertView = inflater.inflate(mResource, parent, false);
         ImageView imageViewSymptom = (ImageView)convertView.findViewById(R.id.imageViewFeature);
-        imageViewSymptom.setImageResource(feature.getImage());
         TextView textViewSymptomDescription = (TextView)convertView.findViewById(R.id.textViewFeatureDescription);
         textViewSymptomDescription.setText(feature.getDescription());
         return convertView;

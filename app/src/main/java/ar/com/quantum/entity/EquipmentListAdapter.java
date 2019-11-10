@@ -26,15 +26,18 @@ public class EquipmentListAdapter extends ArrayAdapter<Equipment> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         // get equipment information
-        Equipment equipment = new Equipment(getItem(position).getName(), getItem(position).getDescription(), getItem(position).getImage());
+        Equipment equipment = new Equipment();
+        equipment.setName(getItem(position).getName());
+        equipment.setDescription(getItem(position).getDescription());
         LayoutInflater inflater = LayoutInflater.from(mContext);
         convertView = inflater.inflate(mResource, parent, false);
-        ImageView imageViewModel = (ImageView)convertView.findViewById(R.id.imageViewModel);
-        imageViewModel.setImageResource(equipment.getImage());
+        //ImageView imageViewModel = (ImageView)convertView.findViewById(R.id.imageViewModel);
+        //imageViewModel.setImageResource(equipment.getImage());
         TextView textViewModelName = (TextView)convertView.findViewById(R.id.textViewModelName);
         textViewModelName.setText(equipment.getName());
         TextView textViewModelDescription = (TextView)convertView.findViewById(R.id.textViewModelDescription);
         textViewModelDescription.setText(equipment.getDescription());
         return convertView;
+
     }
 }
