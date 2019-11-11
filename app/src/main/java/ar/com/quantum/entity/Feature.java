@@ -1,18 +1,16 @@
 package ar.com.quantum.entity;
 
-import androidx.room.ColumnInfo;
-import androidx.room.Entity;
-import androidx.room.Ignore;
-import androidx.room.PrimaryKey;
 
-@Entity
+import android.graphics.Bitmap;
+
+import java.util.List;
+
 public class Feature {
 
-    @PrimaryKey(autoGenerate = true)
     private Integer id;
     private String description = null;
-    @ColumnInfo(typeAffinity = ColumnInfo.BLOB)
-    public byte[] image;
+    private Bitmap image;
+    private List<Symptom> symptoms;
 
     public Feature() {}
 
@@ -24,14 +22,6 @@ public class Feature {
         this.description = description;
     }
 
-    public byte[] getImage() {
-        return image;
-    }
-
-    public void setImage(byte[] image) {
-        this.image = image;
-    }
-
     public Integer getId() {
         return id;
     }
@@ -39,4 +29,21 @@ public class Feature {
     public void setId(Integer id) {
         this.id = id;
     }
+
+    public Bitmap getImage() {
+        return image;
+    }
+
+    public void setImage(Bitmap image) {
+        this.image = image;
+    }
+
+    public List<Symptom> getSymptoms() {
+        return symptoms;
+    }
+
+    public void setSymptoms(List<Symptom> symptoms) {
+        this.symptoms = symptoms;
+    }
+
 }

@@ -1,11 +1,16 @@
 package ar.com.quantum.util;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.util.Base64;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Utils {
 
-    public static Boolean isValidEmail(String email){
+    public static Boolean isValidEmail(String email)
+    {
 
         String regex = "^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$";
         Pattern pattern = Pattern.compile(regex);
@@ -53,5 +58,15 @@ public class Utils {
         return (sum % 10 == 0);
     }
 
+    public static Bitmap getBitmapFromImageBytes(byte[] imageAsBytes)
+    {
+        return BitmapFactory.decodeByteArray(imageAsBytes, 0, imageAsBytes.length);
+    }
+
+
+    public static byte[] getImageBytesFromBase64(String base64)
+    {
+        return Base64.decode(base64.getBytes(), Base64.DEFAULT);
+    }
 
 }

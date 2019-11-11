@@ -42,7 +42,7 @@ public class SymptomView extends BaseView {
         symptomListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent singIn = new Intent(SymptomView.this, TutorialView.class);
+                Intent singIn = new Intent(SymptomView.this, QuestionView.class);
                 startActivity(singIn);
                 finish();
 

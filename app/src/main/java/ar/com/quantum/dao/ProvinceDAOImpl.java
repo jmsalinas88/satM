@@ -12,9 +12,7 @@ public class ProvinceDAOImpl extends BaseDAO<Province> implements  IDAO<Province
     private static final String TABLE_NAME = "province";
 
     public ProvinceDAOImpl(Context context) {
-        super(context, TABLE_NAME);
-        super.dbManager.getWritableDatabase().execSQL(CREATE);
-        super.database = super.dbManager.getWritableDatabase();
+        super(context);
     }
 
     @Override

@@ -5,10 +5,10 @@ import android.content.Context;
 import java.util.ArrayList;
 import java.util.List;
 
-import ar.com.quantum.dao.AppDatabase;
+import ar.com.quantum.dao.EquipmentDAOImpl;
 import ar.com.quantum.entity.Equipment;
 import ar.com.quantum.presenter.BaseModel;
-import ar.com.quantum.satm.R;
+
 
 public class EquipmentModel extends BaseModel implements IEquipment.Model {
 
@@ -55,18 +55,11 @@ public class EquipmentModel extends BaseModel implements IEquipment.Model {
         equipmentList.add(qV);
         equipmentList.add(qYou);
 
+        EquipmentDAOImpl daoE = new EquipmentDAOImpl(this.mContext);
+        equipmentList = daoE.getAll();
 
 
-        AppDatabase database =  AppDatabase.getDatabase(this.mContext);
-
-        System.out.println(" Este equipment viene de la BD ? ");
-
-        List<Equipment> nEquipmentList  = database.equipmentDao().getAll();
-
-        for (Equipment nE : nEquipmentList){
-            System.out.println(" Este equipment viene de la BD: " + nE.getName());
-        }
-
+        // return equipmentList;
 
         return equipmentList;
     }

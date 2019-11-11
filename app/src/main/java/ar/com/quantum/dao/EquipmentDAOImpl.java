@@ -1,25 +1,56 @@
 package ar.com.quantum.dao;
 
+import android.content.ContentValues;
 import android.content.Context;
-
+import android.database.Cursor;
 import java.util.ArrayList;
 import java.util.List;
-
 import ar.com.quantum.entity.Equipment;
-import ar.com.quantum.satm.R;
+import ar.com.quantum.entity.Image;
+import ar.com.quantum.entity.User;
+
 
 public class EquipmentDAOImpl extends BaseDAO <Equipment> implements IDAO<Equipment>{
 
-    private static final String CREATE = "create table if not exists equipment (id integer primary key autoincrement, name text, description text, image blob)";
-    private static final String TABLE_NAME = "equipment";
 
     public EquipmentDAOImpl(Context context) {
-        super(context, TABLE_NAME);
+        super(context);
     }
 
     @Override
     public boolean insert(Equipment entity) {
-        return false;
+
+        User user = entity.getUser();
+
+        ContentValues registro = new ContentValues();
+        registro.put("name", user.getName());
+        registro.put("surname", user.getSurname());
+        registro.put("email", user.getEmail());
+        registro.put("phone_number", user.getPhoneNumber());
+        registro.put("emei", entity.getImei());
+        registro.put("equipment_id", entity.getId());
+        registro.put("province_id", user.getProvince().getId());
+
+        this.db.insert(AdminSQLiteOpenHelper.EQUIPMENT_USER_TABLE_NAME, null, registro);
+
+        List<Equipment> equipmentList  = new ArrayList<Equipment>();
+        String sql = "SELECT *  FROM " + AdminSQLiteOpenHelper.EQUIPMENT_USER_TABLE_NAME + ";";
+
+        System.out.println(sql);
+
+        Cursor cursor = this.db.rawQuery(sql, null);
+        while (cursor.moveToNext()){
+            System.out.println(" -------------> Trajo algo de la BD " + cursor.getInt(0));
+            System.out.println(" -------------> Trajo algo de la BD " + cursor.getString(1));
+            System.out.println(" -------------> Trajo algo de la BD " + cursor.getString(2));
+            System.out.println(" -------------> Trajo algo de la BD " + cursor.getString(3));
+            // s System.out.println(" -------------> Trajo algo de la BD " + cursor.getInt(4));
+
+
+        }
+        this.closeDatabase();
+
+        return true;
     }
 
     @Override
@@ -40,20 +71,38 @@ public class EquipmentDAOImpl extends BaseDAO <Equipment> implements IDAO<Equipm
     @Override
     public List<Equipment> getAll() {
 
+        ContentValues registro = new ContentValues();
+        registro.put("id", 2);
+        registro.put("name", "Probando, probando");
+        registro.put("description", "Esta es la descripcion");
+        registro.put("id_image", 10);
+
+        this.db.insert(AdminSQLiteOpenHelper.EQUIPMENT_TABLE_NAME, null, registro);
+
         List<Equipment> equipmentList  = new ArrayList<Equipment>();
+        String sql = "SELECT id , name, description, id_image  FROM " + AdminSQLiteOpenHelper.EQUIPMENT_TABLE_NAME + ";";
 
-       /* Equipment qfit = new Equipment("Quantum Fit", "Android Nougat - Memoria RAM de 1GB - Memoria interna de 16GB", R.drawable.q_fit);
-        Equipment qM = new Equipment("Quantum M", "Android Nougat - Memoria RAM de 1GB - Memoria interna de 16GB", R.drawable.q_m);
-        Equipment qMini = new Equipment("Quantum Mini", "Android Oreo - Memoria RAM de 512MB - Memoria interna de 8GB", R.drawable.q_mini);
-        Equipment qV = new Equipment("Quantum V", "Android Nougat - Memoria RAM de 4GB - Memoria interna de 64GB", R.drawable.q_m);
-        Equipment qYou = new Equipment("Quantum You", "Android Nougat - Memoria RAM de 3GB - Memoria interna de 32GB", R.drawable.q_you);
+        System.out.println(sql );
 
-        equipmentList.add(qfit);
-        equipmentList.add(qM);
-        equipmentList.add(qMini);
-        equipmentList.add(qV);
-        equipmentList.add(qYou); */
+        Cursor cursor = this.db.rawQuery(sql, null);
+        while (cursor.moveToNext()){
+            Equipment e = new Equipment();
+            e.setId(cursor.getInt(0));
+            e.setName(cursor.getString(1));
+            e.setDescription(cursor.getString(2));
+            Image image = new Image();
+            image.setId(cursor.getInt(3));
+            equipmentList.add(e);
 
+            System.out.println(" -------------> Trajo algo de la BD " + cursor.getInt(0));
+            System.out.println(" -------------> Trajo algo de la BD " + cursor.getString(1));
+            System.out.println(" -------------> Trajo algo de la BD " + cursor.getString(2));
+            System.out.println(" -------------> Trajo algo de la BD " + cursor.getString(3));
+           // s System.out.println(" -------------> Trajo algo de la BD " + cursor.getInt(4));
+
+
+        }
+        this.closeDatabase();
 
         return equipmentList;
     }

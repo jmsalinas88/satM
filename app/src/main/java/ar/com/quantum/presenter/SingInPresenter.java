@@ -3,6 +3,8 @@ package ar.com.quantum.presenter;
 import android.content.Context;
 import android.text.TextUtils;
 import java.util.List;
+import ar.com.quantum.entity.Equipment;
+import ar.com.quantum.entity.Province;
 import ar.com.quantum.entity.User;
 import ar.com.quantum.model.ISingIn;
 import ar.com.quantum.model.SingInModel;
@@ -20,7 +22,7 @@ public class SingInPresenter extends BasePresenter implements ISingIn.Presenter{
     }
 
     @Override
-    public void showProvinces(List<String> provincesList) {
+    public void showProvinces(List<Province> provincesList) {
         if(!provincesList.isEmpty()){
             this.sinInview.showProvinces(provincesList);
         }
@@ -32,12 +34,12 @@ public class SingInPresenter extends BasePresenter implements ISingIn.Presenter{
     }
 
     @Override
-    public void performLogin(User user) {
+    public void performLogin(Equipment equipment) {
 
-        this.sinInview.loginSucess();
-
-        if(TextUtils.isEmpty(user.getEmei()) ||
-           TextUtils.isEmpty(user.getNamne()) ||
+        User user = equipment.getUser();
+        // this.sinInview.loginSucess();
+        if(TextUtils.isEmpty("1") ||
+           TextUtils.isEmpty(user.getName()) ||
            TextUtils.isEmpty(user.getSurname()) ||
            TextUtils.isEmpty(user.getEmail()) ||
            TextUtils.isEmpty(user.getPhoneNumber())
@@ -47,20 +49,28 @@ public class SingInPresenter extends BasePresenter implements ISingIn.Presenter{
         }
         else
         {
-            try {
-                 this.sinInview.loginSucess();
-            }catch (Exception e){
-                  this.sinInview.loginError();
-            }
+            this.sinInmodel.addEquipmentUser(equipment);
         }
 
+    }
+
+    @Override
+    public void addEquipmentUser(Boolean addResult) {
+        if(addResult)
+        {
+            this.sinInview.loginSucess();
+        }
+        else
+            {
+            this.sinInview.loginError();
+        }
     }
 
     private String messageValidations(User user){
         String out = "Ingrese:\n";
 
-        if(TextUtils.isEmpty(user.getEmei()) &&
-           TextUtils.isEmpty(user.getNamne()) &&
+        if(TextUtils.isEmpty("1") &&
+           TextUtils.isEmpty(user.getName()) &&
            TextUtils.isEmpty(user.getSurname()) &&
            TextUtils.isEmpty(user.getEmail()) &&
            TextUtils.isEmpty(user.getPhoneNumber())
@@ -70,12 +80,12 @@ public class SingInPresenter extends BasePresenter implements ISingIn.Presenter{
         }
         else
             {
-            if (TextUtils.isEmpty(user.getEmei())) {
+            if (TextUtils.isEmpty("1")){
                 out += " IMEI\n";
             }else{
-                out += Utils.isValidIMEI(Long.valueOf(user.getEmei())) ? "": " IMEI (debe ser uno valido)\n";
+                //out += Utils.isValidIMEI(Long.valueOf(user.getEmei())) ? "": " IMEI (debe ser uno valido)\n";
             }
-            if (TextUtils.isEmpty(user.getNamne())) {
+            if (TextUtils.isEmpty(user.getName())) {
                 out += " Nombre\n";
             }
             if (TextUtils.isEmpty(user.getSurname())) {

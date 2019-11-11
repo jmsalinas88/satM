@@ -26,21 +26,27 @@ public class FeatureView extends BaseView {
         ListView feactureListView = (ListView)findViewById(R.id.featureListView);
 
 
-        /*Feature s1 = new Feature("BATERIA", 0);
-        Feature s2 = new Feature("ENCENDIDO", 0);
-        Feature s3 = new Feature("PANTALLA", 0);
-        Feature s4 = new Feature("RED", 0);
-        Feature s5 = new Feature("AUDIO", 0);
-        Feature s6 = new Feature("CAMARA", 0);*/
+        Feature s1 = new Feature();
+        s1.setDescription("BATERIA");
+        Feature s2 = new Feature();
+        s2.setDescription("ENCENDIDO");
+        Feature s3 = new Feature();
+        s3.setDescription("PANTALLA");
+        Feature s4 = new Feature();
+        s4.setDescription("RED");
+        Feature s5 = new Feature();
+        s5.setDescription("AUDIO");
+        Feature s6 = new Feature();
+        s6.setDescription("CAMARA");
 
         List<Feature> featureList  = new ArrayList<Feature>();
 
-        /*featureList.add(s1);
+        featureList.add(s1);
         featureList.add(s2);
         featureList.add(s3);
         featureList.add(s4);
         featureList.add(s5);
-        featureList.add(s6);*/
+        featureList.add(s6);
 
 
         FeatureListAdapter adapter = new FeatureListAdapter(this,R.layout.feature_item_layout, featureList);

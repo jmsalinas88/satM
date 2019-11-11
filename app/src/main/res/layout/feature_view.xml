@@ -10,12 +10,13 @@
 
     <include layout="@layout/toolbar" android:id="@+id/symptomToolbar"/>
 
+    <include layout="@layout/commons_logo_layout"/>
+
+    <!--
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:src="@drawable/logo_quantum_jpg" />
-
-
+        android:layout_height="100dp"
+        android:src="@drawable/logo_quantum_jpg" /> -->
 
     <ListView
         android:layout_width="match_parent"

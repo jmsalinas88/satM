@@ -5,15 +5,17 @@ import android.database.sqlite.SQLiteDatabase;
 
 public abstract class BaseDAO <T> {
 
-    protected SQLiteDatabase database;
     protected Context context;
-    protected String tableName;
-    protected DatabaseManager dbManager;
+    protected AdminSQLiteOpenHelper dbManager;
+    protected  SQLiteDatabase db;
 
-    public BaseDAO(Context context, String tableName){
+    public BaseDAO(Context context){
         this.context = context;
-        this.tableName = tableName;
-        this.dbManager = new DatabaseManager(context);
+        this.dbManager = new AdminSQLiteOpenHelper(context);
+        this.db = this.dbManager.getWritableDatabase();
     }
 
+    protected  void closeDatabase(){
+        this.db.close();
+    }
 }

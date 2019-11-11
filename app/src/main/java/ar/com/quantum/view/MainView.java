@@ -4,11 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import ar.com.quantum.dao.AppDatabase;
-import ar.com.quantum.entity.Equipment;
 import ar.com.quantum.satm.R;
 
 public class MainView extends BaseView {

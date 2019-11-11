@@ -1,13 +1,8 @@
 package ar.com.quantum.entity;
 
-import androidx.room.Entity;
-import androidx.room.Ignore;
-import androidx.room.PrimaryKey;
 
-@Entity
 public class Province {
 
-    @PrimaryKey(autoGenerate = true)
     private Integer id;
     private String description;
 

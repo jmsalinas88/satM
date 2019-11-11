@@ -3,6 +3,7 @@ package ar.com.quantum.view;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -56,28 +57,23 @@ public class SingInView extends BaseView implements ISingIn.View{
     @Override
     public void onClick(View v) {
         User user = new User();
-        user.setNamne(this.name.getText().toString().trim());
+        user.setName(this.name.getText().toString().trim());
         user.setSurname(this.surname.getText().toString().trim());
         user.setEmail(this.email.getText().toString().trim());
         user.setPhoneNumber(this.phoneNumber.getText().toString().trim());
         Equipment equipment = (Equipment)getIntent().getSerializableExtra(INTENT_EQUIPMENT_KEY);
-        user.setEmei(this.imei.getText().toString().trim());
-
-        Province province = new Province();
-        province.setDescription(this.provinces.getSelectedItem().toString());
-        user.setProvinceId(1);
-
-        System.out.println(" Equipo: " + equipment.getName());
-        System.out.println(" Provincia: " + province.getDescription());
-
-        this.presenter.performLogin(user);
+        equipment.setImei(this.imei.getText().toString().trim());
+        Province province = (Province )this.provinces.getSelectedItem();
+        user.setProvince(province);
+        equipment.setUser(user);
+        this.presenter.performLogin(equipment);
     }
 
     @Override
-    public void showProvinces(List<String> provincesList) {
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter <String>(this, R.layout.localityitem, provincesList);
+    public void showProvinces(List<Province> provincesList) {
+        ProvinceListAdapter dataAdapter = new ProvinceListAdapter(this, R.layout.province_item_layout, provincesList);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        provinces.setAdapter(dataAdapter);
+        this.provinces.setAdapter(dataAdapter);
     }
 
     @Override

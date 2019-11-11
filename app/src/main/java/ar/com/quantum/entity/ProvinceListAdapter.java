@@ -11,12 +11,12 @@ import androidx.annotation.Nullable;
 import java.util.List;
 import ar.com.quantum.satm.R;
 
-public class ProvinceListAdapter extends ArrayAdapter<String> {
+public class ProvinceListAdapter extends ArrayAdapter<Province> {
 
     private Context mContext = null;
     private Integer mResource = null;
 
-    public ProvinceListAdapter(@NonNull Context context, int resource, @NonNull List<String> objects) {
+    public ProvinceListAdapter(@NonNull Context context, int resource, @NonNull List<Province> objects) {
         super(context, resource, objects);
         mContext = context;
         mResource = resource;
@@ -24,14 +24,23 @@ public class ProvinceListAdapter extends ArrayAdapter<String> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        Province province = new Province();
-        province.setDescription(getItem(position));
-        LayoutInflater inflater = LayoutInflater.from(mContext);
-        convertView = inflater.inflate(mResource, parent, false);
-        return convertView;
+        return initView(position, convertView, parent);
     }
 
+    @Override
+    public View getDropDownView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+        return initView(position, convertView, parent);
+    }
 
+    public View initView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+        Province province = new Province();
+        province.setDescription(getItem(position).getDescription());
+        province.setId(getItem(position).getId());
+        LayoutInflater inflater = LayoutInflater.from(mContext);
+        convertView = inflater.inflate(mResource, parent, false);
+        TextView textViewProvince = (TextView)convertView.findViewById(R.id.provinceTextView);
+        textViewProvince.setText(province.getDescription());
 
-
+        return convertView;
+    }
 }

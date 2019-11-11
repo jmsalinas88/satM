@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import java.util.List;
 import ar.com.quantum.satm.R;
+import ar.com.quantum.util.Utils;
 
 public class EquipmentListAdapter extends ArrayAdapter<Equipment> {
 
@@ -32,7 +33,7 @@ public class EquipmentListAdapter extends ArrayAdapter<Equipment> {
         LayoutInflater inflater = LayoutInflater.from(mContext);
         convertView = inflater.inflate(mResource, parent, false);
         //ImageView imageViewModel = (ImageView)convertView.findViewById(R.id.imageViewModel);
-        //imageViewModel.setImageResource(equipment.getImage());
+        //imageViewModel.setImageBitmap(Utils.getBitmapFromImageBytes(equipment.getImage()));
         TextView textViewModelName = (TextView)convertView.findViewById(R.id.textViewModelName);
         textViewModelName.setText(equipment.getName());
         TextView textViewModelDescription = (TextView)convertView.findViewById(R.id.textViewModelDescription);

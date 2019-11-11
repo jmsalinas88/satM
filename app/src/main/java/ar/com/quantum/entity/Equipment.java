@@ -1,24 +1,22 @@
 package ar.com.quantum.entity;
 
-import androidx.room.ColumnInfo;
-import androidx.room.Entity;
-import androidx.room.Ignore;
-import androidx.room.PrimaryKey;
-import java.io.Serializable;
+import android.graphics.Bitmap;
 
-@Entity
+import java.io.Serializable;
+import java.util.List;
+
+
 public class Equipment implements Serializable {
 
-    @PrimaryKey(autoGenerate = true)
     private Integer id;
     private String name;
     private String description;
-    @ColumnInfo(typeAffinity = ColumnInfo.BLOB)
-    public byte[] image;
-    private String emei;
+    private Bitmap image;
+    private String imei;
+    private List<Feature> features;
+    private User user;
 
     public Equipment() {
-
     }
 
     public String getName() {
@@ -45,20 +43,36 @@ public class Equipment implements Serializable {
         this.id = id;
     }
 
-    public String getEmei() {
-        return emei;
-    }
-
-    public void setEmei(String emei) {
-        this.emei = emei;
-    }
-
-    public byte[] getImage() {
+    public Bitmap getImage() {
         return image;
     }
 
-    public void setImage(byte[] image) {
+    public void setImage(Bitmap image) {
         this.image = image;
+    }
+
+    public String getImei() {
+        return imei;
+    }
+
+    public void setImei(String imei) {
+        this.imei = imei;
+    }
+
+    public List<Feature> getFeatures() {
+        return features;
+    }
+
+    public void setFeatures(List<Feature> features) {
+        this.features = features;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
 }

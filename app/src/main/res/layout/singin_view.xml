@@ -8,10 +8,14 @@
 
     <include android:id="@+id/singInToolbar" layout="@layout/toolbar" />
 
+    <include layout="@layout/commons_logo_layout"/>
+
+    <!--
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:src="@drawable/logo_quantum_jpg" />
+        android:layout_height="100dp"
+        android:src="@drawable/logo_quantum_jpg" /> -->
+
 
     <EditText
         android:id="@+id/imei"
@@ -86,20 +90,19 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="5dp">
+        android:padding="10dp">
 
         <Button
             android:id="@+id/buttonSingIn"
             style="@android:style/Widget.DeviceDefault.Light.Button"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Ingresar"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
             android:textColor="@color/colorWhite"
-            android:background="@drawable/rounded_button"/>
+            android:background="@drawable/rounded_button"
+            android:padding="10dp"/>
 
     </LinearLayout>
 

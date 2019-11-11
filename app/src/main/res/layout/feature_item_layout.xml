@@ -6,20 +6,19 @@
     android:weightSum="100"
     android:padding="10dp">
 
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_weight="66.6"
-        android:id="@+id/imageViewFeature"
-        android:padding="10dp"/>
-
-
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="33.3">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="66.6"
+            android:id="@+id/imageViewFeature"
+            android:padding="10dp"
+            android:src="@drawable/senal_wifi"/>
 
         <TextView
             android:gravity="center"
