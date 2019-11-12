@@ -19,4 +19,23 @@
         <item name="android:textColor">@color/colorQTurq</item>
     </style>
 
+    <style name="AlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/dialogButtonText</item>
+        <item name="titleTextColor">@color/colorQTurq</item>
+        <item name="colorPrimary">@color/colorQTurq</item>
+        <item name="colorPrimaryDark">@color/colorQTurq</item>
+    </style>
+
+    <style name="spinner_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/gradient_spinner</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:popupBackground">@color/colorQTextGrey</item>
+    </style>
+
 </resources>

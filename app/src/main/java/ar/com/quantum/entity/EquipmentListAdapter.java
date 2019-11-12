@@ -15,6 +15,8 @@ import ar.com.quantum.util.Utils;
 
 public class EquipmentListAdapter extends ArrayAdapter<Equipment> {
 
+
+    private static final String EQUIPMENT_ASSET_PATH = "equipment/";
     private Context mContext = null;
     private Integer mResource = null;
 
@@ -30,10 +32,11 @@ public class EquipmentListAdapter extends ArrayAdapter<Equipment> {
         Equipment equipment = new Equipment();
         equipment.setName(getItem(position).getName());
         equipment.setDescription(getItem(position).getDescription());
+        equipment.setImage(getItem(position).getImage());
         LayoutInflater inflater = LayoutInflater.from(mContext);
         convertView = inflater.inflate(mResource, parent, false);
-        //ImageView imageViewModel = (ImageView)convertView.findViewById(R.id.imageViewModel);
-        //imageViewModel.setImageBitmap(Utils.getBitmapFromImageBytes(equipment.getImage()));
+        ImageView imageViewModel = (ImageView)convertView.findViewById(R.id.imageViewModel);
+        imageViewModel.setImageBitmap(Utils.getBitmapFromAsset(this.mContext, EQUIPMENT_ASSET_PATH + equipment.getImage()));
         TextView textViewModelName = (TextView)convertView.findViewById(R.id.textViewModelName);
         textViewModelName.setText(equipment.getName());
         TextView textViewModelDescription = (TextView)convertView.findViewById(R.id.textViewModelDescription);

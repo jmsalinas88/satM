@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import ar.com.quantum.entity.Tutorial;
 import ar.com.quantum.satm.R;
 
 public class MainView extends BaseView {

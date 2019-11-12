@@ -21,7 +21,7 @@ public abstract class BaseView extends AppCompatActivity {
     }
 
     protected void showInformation(Context context, String title, String message, String possitiveButtonText) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        AlertDialog.Builder builder = new AlertDialog.Builder(context, R.style.AlertDialogTheme);
         builder.setCancelable(true);
         builder.setTitle(title);
         builder.setMessage(message);

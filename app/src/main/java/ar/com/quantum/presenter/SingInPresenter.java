@@ -37,15 +37,15 @@ public class SingInPresenter extends BasePresenter implements ISingIn.Presenter{
     public void performLogin(Equipment equipment) {
 
         User user = equipment.getUser();
-        // this.sinInview.loginSucess();
-        if(TextUtils.isEmpty("1") ||
+
+        if(TextUtils.isEmpty(equipment.getImei()) ||
            TextUtils.isEmpty(user.getName()) ||
            TextUtils.isEmpty(user.getSurname()) ||
            TextUtils.isEmpty(user.getEmail()) ||
            TextUtils.isEmpty(user.getPhoneNumber())
          )
         {
-         this.sinInview.loginValidations(this.messageValidations(user));
+         this.sinInview.loginValidations(this.messageValidations(equipment));
         }
         else
         {
@@ -66,10 +66,12 @@ public class SingInPresenter extends BasePresenter implements ISingIn.Presenter{
         }
     }
 
-    private String messageValidations(User user){
+    private String messageValidations(Equipment equipment){
+
+        User user = equipment.getUser();
         String out = "Ingrese:\n";
 
-        if(TextUtils.isEmpty("1") &&
+        if(TextUtils.isEmpty(equipment.getImei()) &&
            TextUtils.isEmpty(user.getName()) &&
            TextUtils.isEmpty(user.getSurname()) &&
            TextUtils.isEmpty(user.getEmail()) &&
@@ -80,7 +82,7 @@ public class SingInPresenter extends BasePresenter implements ISingIn.Presenter{
         }
         else
             {
-            if (TextUtils.isEmpty("1")){
+            if (TextUtils.isEmpty(equipment.getImei())){
                 out += " IMEI\n";
             }else{
                 //out += Utils.isValidIMEI(Long.valueOf(user.getEmei())) ? "": " IMEI (debe ser uno valido)\n";

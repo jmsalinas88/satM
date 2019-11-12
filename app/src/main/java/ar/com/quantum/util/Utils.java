@@ -1,9 +1,13 @@
 package ar.com.quantum.util;
 
+import android.content.Context;
+import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.Base64;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -67,6 +71,21 @@ public class Utils {
     public static byte[] getImageBytesFromBase64(String base64)
     {
         return Base64.decode(base64.getBytes(), Base64.DEFAULT);
+    }
+
+
+    public static Bitmap getBitmapFromAsset(Context context, String filePath) {
+        AssetManager assetManager = context.getAssets();
+        InputStream istr;
+        Bitmap bitmap = null;
+        try {
+            istr = assetManager.open(filePath);
+            bitmap = BitmapFactory.decodeStream(istr);
+        } catch (IOException e) {
+            e.getStackTrace();
+        }
+
+        return bitmap;
     }
 
 }

@@ -11,7 +11,7 @@ public class Equipment implements Serializable {
     private Integer id;
     private String name;
     private String description;
-    private Bitmap image;
+    private String image;
     private String imei;
     private List<Feature> features;
     private User user;
@@ -43,14 +43,6 @@ public class Equipment implements Serializable {
         this.id = id;
     }
 
-    public Bitmap getImage() {
-        return image;
-    }
-
-    public void setImage(Bitmap image) {
-        this.image = image;
-    }
-
     public String getImei() {
         return imei;
     }
@@ -75,4 +67,11 @@ public class Equipment implements Serializable {
         this.user = user;
     }
 
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
 }

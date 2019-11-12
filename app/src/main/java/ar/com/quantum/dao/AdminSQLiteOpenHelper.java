@@ -1,6 +1,7 @@
 package ar.com.quantum.dao;
 
 import android.content.Context;
+import android.content.res.AssetManager;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -26,6 +27,8 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         try {
+
+
             db.execSQL(
                "CREATE TABLE IF NOT EXISTS " + EQUIPMENT_TABLE_NAME + "(id INTEGER PRIMARY KEY, name TEXT ,description TEXT,id_image INTEGER)"
             );
