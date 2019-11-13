@@ -1,17 +1,21 @@
 package ar.com.quantum.dao;
 
 import android.content.Context;
-import android.content.res.AssetManager;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
-
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
 
-    private static final String DATA_BASE_NAME = "q5";
+
+    private Context mContex;
+    private static final String DATA_BASE_NAME = "q5v";
     private static final Integer DATA_BASE_VERSION = 1;
+    private static final String DATA_BASE_ASSET_PATH = "databases/";
 
     // Tables:
     public static final String EQUIPMENT_TABLE_NAME = "equipment";
@@ -22,54 +26,87 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
 
     public AdminSQLiteOpenHelper(Context context) {
         super(context, DATA_BASE_NAME, null, DATA_BASE_VERSION);
+        this.mContex = context;
     }
 
-    @Override
-    public void onCreate(SQLiteDatabase db) {
+
+    public static void setDefaultDataBase(Context context) {
+        InputStream myInput = null;
+        OutputStream myOutput = null;
         try {
+            myInput = context.getAssets().open(DATA_BASE_ASSET_PATH +DATA_BASE_NAME);
 
-
-            db.execSQL(
-               "CREATE TABLE IF NOT EXISTS " + EQUIPMENT_TABLE_NAME + "(id INTEGER PRIMARY KEY, name TEXT ,description TEXT,id_image INTEGER)"
-            );
-
-            db.execSQL("CREATE TABLE IF NOT EXISTS "+PROVINCE_TABLE_NAME+" (\n" +
-                    "\t\"id\"\tINTEGER PRIMARY KEY AUTOINCREMENT,\n" +
-                    "\t\"description\"\tTEXT\n" +
-                    ")");
-
-            db.execSQL(
-                    "CREATE TABLE IF NOT EXISTS "+ EQUIPMENT_USER_TABLE_NAME +" (\n" +
-                            "\t\"id\"\tINTEGER PRIMARY KEY AUTOINCREMENT,\n" +
-                            "\t\"name\"\tTEXT,\n" +
-                            "\t\"surname\"\tTEXT,\n" +
-                            "\t\"email\"\tTEXT,\n" +
-                            "\t\"phone_number\"\tTEXT,\n" +
-                            "\t\"emei\"\tTEXT,\n" +
-                            "\t\"equipment_id\"\tINTEGER,\n" +
-                            "\t\"province_id\"\tINTEGER\n" +
-                            ");"
-            );
-
-
-        } catch (SQLiteException e) {
+            // Path to the just created empty db
+            String outFileName = context.getDatabasePath(DATA_BASE_NAME).getPath();
+            //Open the empty db as the output stream
+            myOutput = new FileOutputStream(outFileName);
+            //transfer bytes from the inputfile to the outputfile
+            byte[] buffer = new byte[1024];
+            int length;
+            while ((length = myInput.read(buffer)) > 0) {
+                myOutput.write(buffer, 0, length);
+            }
+            //Close the streams
+            myOutput.flush();
+            myOutput.close();
+            myInput.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally {
             try {
-                throw new IOException(e);
-            } catch (IOException e1) {
-                e1.printStackTrace();
+                myOutput.flush();
+                myOutput.close();
+                myInput.close();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         }
+    }
 
+
+    private boolean existsDataBase() {
+        SQLiteDatabase checkDB = null;
+        try {
+            checkDB = SQLiteDatabase.openDatabase(this.mContex.getDatabasePath(DATA_BASE_NAME).getPath(), null, SQLiteDatabase.OPEN_READWRITE);
+            if(checkDB!= null){
+                checkDB.close();
+            }
+        } catch (SQLiteException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            if(checkDB!= null){
+
+                try{
+                    checkDB.close();
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+        }
+        return checkDB != null;
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-       db.execSQL("DROP TABLE IF EXISTS " + EQUIPMENT_TABLE_NAME);
-       db.execSQL("DROP TABLE IF EXISTS " + EQUIPMENT_USER_TABLE_NAME);
-       onCreate(db);
+    public void onCreate(SQLiteDatabase db) { }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) { }
+
+    @Override
+    public SQLiteDatabase getWritableDatabase() {
+        if(!existsDataBase()){
+            AdminSQLiteOpenHelper.setDefaultDataBase(this.mContex);
+        }
+        return super.getWritableDatabase();
     }
 
-    public SQLiteDatabase getDatabase(){
-        return this.getWritableDatabase();
+    @Override
+    public SQLiteDatabase getReadableDatabase() {
+        if(!existsDataBase()){
+            AdminSQLiteOpenHelper.setDefaultDataBase(this.mContex);
+        }
+        return super.getReadableDatabase();
     }
 }

@@ -1,16 +1,10 @@
 package ar.com.quantum.view;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-import java.util.ArrayList;
 import java.util.List;
 import ar.com.quantum.entity.Equipment;
 import ar.com.quantum.entity.Province;
@@ -19,7 +13,6 @@ import ar.com.quantum.entity.User;
 import ar.com.quantum.model.ISingIn;
 import ar.com.quantum.presenter.SingInPresenter;
 import ar.com.quantum.satm.R;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -78,7 +71,7 @@ public class SingInView extends BaseView implements ISingIn.View{
 
     @Override
     public void loginValidations(String message) {
-        this.showInformation(this, "Informacion",message, "ACEPTAR");
+        this.showInformation(this, "Información",message, "ACEPTAR");
     }
 
     @Override

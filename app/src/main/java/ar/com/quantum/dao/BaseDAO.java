@@ -14,8 +14,4 @@ public abstract class BaseDAO <T> {
         this.dbManager = new AdminSQLiteOpenHelper(context);
         this.db = this.dbManager.getWritableDatabase();
     }
-
-    protected  void closeDatabase(){
-        this.db.close();
-    }
 }

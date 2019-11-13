@@ -20,7 +20,7 @@
     </style>
 
     <style name="AlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
-        <item name="colorAccent">@color/dialogButtonText</item>
+        <item name="colorAccent">#000000</item>
         <item name="titleTextColor">@color/colorQTurq</item>
         <item name="colorPrimary">@color/colorQTurq</item>
         <item name="colorPrimaryDark">@color/colorQTurq</item>

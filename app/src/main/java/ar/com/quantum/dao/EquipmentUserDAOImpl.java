@@ -27,7 +27,7 @@ public class EquipmentUserDAOImpl extends BaseDAO <Equipment> implements IDAO<Eq
             this.db.insert(AdminSQLiteOpenHelper.EQUIPMENT_USER_TABLE_NAME, null, record);
             this.db.close();
         }catch (Exception e){
-            e.getStackTrace();
+           e.printStackTrace();
         }
         return true;
     }

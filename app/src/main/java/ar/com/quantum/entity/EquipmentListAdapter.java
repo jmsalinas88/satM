@@ -15,7 +15,6 @@ import ar.com.quantum.util.Utils;
 
 public class EquipmentListAdapter extends ArrayAdapter<Equipment> {
 
-
     private static final String EQUIPMENT_ASSET_PATH = "equipment/";
     private Context mContext = null;
     private Integer mResource = null;
