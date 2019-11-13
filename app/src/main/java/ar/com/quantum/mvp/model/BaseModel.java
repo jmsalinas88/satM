@@ -1,4 +1,4 @@
-package ar.com.quantum.mvp.presenter;
+package ar.com.quantum.mvp.model;
 
 import android.content.Context;
 

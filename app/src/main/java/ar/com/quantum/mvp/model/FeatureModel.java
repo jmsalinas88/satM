@@ -5,7 +5,6 @@ import java.util.List;
 import ar.com.quantum.dao.FeatureDaoImpl;
 import ar.com.quantum.entity.Feature;
 import ar.com.quantum.mvp.interfaces.IFeature;
-import ar.com.quantum.mvp.presenter.BaseModel;
 
 public class FeatureModel extends BaseModel implements IFeature.Model {
 

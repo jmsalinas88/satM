@@ -5,7 +5,6 @@ import java.util.List;
 import ar.com.quantum.dao.EquipmentDaoImpl;
 import ar.com.quantum.entity.Equipment;
 import ar.com.quantum.mvp.interfaces.IEquipment;
-import ar.com.quantum.mvp.presenter.BaseModel;
 
 
 public class EquipmentModel extends BaseModel implements IEquipment.Model {

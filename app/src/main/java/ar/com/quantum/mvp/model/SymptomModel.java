@@ -6,7 +6,6 @@ import ar.com.quantum.dao.SymptomDaoImpl;
 import ar.com.quantum.entity.Feature;
 import ar.com.quantum.entity.Symptom;
 import ar.com.quantum.mvp.interfaces.ISymptom;
-import ar.com.quantum.mvp.presenter.BaseModel;
 
 public class SymptomModel extends BaseModel implements ISymptom.Model {
 

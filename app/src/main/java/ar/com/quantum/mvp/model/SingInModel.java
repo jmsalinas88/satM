@@ -7,7 +7,6 @@ import ar.com.quantum.dao.ProvinceDaoImpl;
 import ar.com.quantum.entity.Equipment;
 import ar.com.quantum.entity.Province;
 import ar.com.quantum.mvp.interfaces.ISingIn;
-import ar.com.quantum.mvp.presenter.BaseModel;
 
 public class SingInModel extends BaseModel implements ISingIn.Model {
 
