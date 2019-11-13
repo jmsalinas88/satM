@@ -11,11 +11,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import java.util.List;
 import ar.com.quantum.satm.R;
+import ar.com.quantum.util.Constants;
+import ar.com.quantum.util.Utils;
 
 public class FeatureListAdapter extends ArrayAdapter<Feature> {
 
-    private Context mContext = null;
-    private Integer mResource = null;
+    private Context mContext;
+    private Integer mResource;
 
     public FeatureListAdapter(@NonNull Context context, int resource, @NonNull List<Feature> objects) {
         super(context, resource, objects);
@@ -28,11 +30,14 @@ public class FeatureListAdapter extends ArrayAdapter<Feature> {
         // get symptom information
         Feature feature = new Feature();
         feature.setDescription(getItem(position).getDescription());
+        feature.setImage(getItem(position).getImage());
         LayoutInflater inflater = LayoutInflater.from(mContext);
         convertView = inflater.inflate(mResource, parent, false);
-        ImageView imageViewSymptom = (ImageView)convertView.findViewById(R.id.imageViewFeature);
-        TextView textViewSymptomDescription = (TextView)convertView.findViewById(R.id.textViewFeatureDescription);
-        textViewSymptomDescription.setText(feature.getDescription());
+        ImageView imageViewFeature = (ImageView)convertView.findViewById(R.id.imageViewFeature);
+        imageViewFeature.setImageBitmap(Utils.getBitmapFromAsset(this.mContext, Constants.FEATURE_ASSET_PATH + feature.getImage()));
+        TextView textViewFeatureDescription = (TextView)convertView.findViewById(R.id.textViewFeatureDescription);
+        textViewFeatureDescription.setText(feature.getDescription());
+
         return convertView;
     }
 }

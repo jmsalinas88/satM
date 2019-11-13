@@ -1,7 +1,8 @@
 package ar.com.quantum.entity;
 
+import java.io.Serializable;
 
-public class User{
+public class User implements Serializable {
 
     private Integer id;
     private Province province;

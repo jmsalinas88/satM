@@ -1,6 +1,8 @@
 package ar.com.quantum.entity;
 
-public class Symptom {
+import java.io.Serializable;
+
+public class Symptom implements Serializable {
 
     private Integer id;
     private String description = null;

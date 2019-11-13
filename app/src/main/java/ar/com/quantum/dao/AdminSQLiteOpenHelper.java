@@ -13,7 +13,7 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
 
 
     private Context mContex;
-    private static final String DATA_BASE_NAME = "q5v";
+    private static final String DATA_BASE_NAME = "q6v";
     private static final Integer DATA_BASE_VERSION = 1;
     private static final String DATA_BASE_ASSET_PATH = "databases/";
 
@@ -21,6 +21,8 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
     public static final String EQUIPMENT_TABLE_NAME = "equipment";
     public static final String EQUIPMENT_USER_TABLE_NAME = "equipment_user";
     public static final String PROVINCE_TABLE_NAME = "province";
+    public static final String FEATURE_TABLE_NAME = "feature";
+    public static final String EQUIPMENT_FEATURE_TABLE_NAME = "equipment_feature";
 
 
 

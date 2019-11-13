@@ -1,14 +1,13 @@
 package ar.com.quantum.entity;
 
-
-import android.graphics.Bitmap;
+import java.io.Serializable;
 import java.util.List;
 
-public class Feature {
+public class Feature implements Serializable {
 
     private Integer id;
     private String description = null;
-    private Bitmap image;
+    private String image;
     private List<Symptom> symptoms;
 
     public Feature() {}
@@ -29,11 +28,11 @@ public class Feature {
         this.id = id;
     }
 
-    public Bitmap getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(Bitmap image) {
+    public void setImage(String image) {
         this.image = image;
     }
 
