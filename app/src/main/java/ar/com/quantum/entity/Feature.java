@@ -2,7 +2,6 @@ package ar.com.quantum.entity;
 
 
 import android.graphics.Bitmap;
-
 import java.util.List;
 
 public class Feature {

@@ -1,7 +1,5 @@
 package ar.com.quantum.entity;
 
-import android.graphics.Bitmap;
-
 import java.io.Serializable;
 import java.util.List;
 

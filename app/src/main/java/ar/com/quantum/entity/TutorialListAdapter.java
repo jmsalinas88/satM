@@ -8,9 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-
 import java.util.List;
-
 import ar.com.quantum.satm.R;
 
 public class TutorialListAdapter  extends ArrayAdapter<Tutorial> {

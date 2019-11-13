@@ -1,12 +1,8 @@
 package ar.com.quantum.model;
 
-import android.view.View;
-
 import java.util.List;
-
 import ar.com.quantum.entity.Equipment;
 import ar.com.quantum.entity.Province;
-import ar.com.quantum.entity.User;
 
 public interface ISingIn {
 

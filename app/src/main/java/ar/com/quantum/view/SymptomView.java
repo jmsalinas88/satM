@@ -5,10 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import ar.com.quantum.entity.Symptom;
 import ar.com.quantum.entity.SymptomListAdapter;
 import ar.com.quantum.satm.R;

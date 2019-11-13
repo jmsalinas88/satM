@@ -1,7 +1,6 @@
 package ar.com.quantum.model;
 
 import java.util.List;
-
 import ar.com.quantum.entity.Equipment;
 
 public interface IEquipment {

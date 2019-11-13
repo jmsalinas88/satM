@@ -2,7 +2,6 @@ package ar.com.quantum.model;
 
 import android.content.Context;
 import java.util.List;
-import ar.com.quantum.dao.EquipmentDAOImpl;
 import ar.com.quantum.dao.EquipmentUserDAOImpl;
 import ar.com.quantum.dao.ProvinceDAOImpl;
 import ar.com.quantum.entity.Equipment;

@@ -2,11 +2,8 @@ package ar.com.quantum.dao;
 
 import android.content.Context;
 import android.database.Cursor;
-
 import java.util.ArrayList;
 import java.util.List;
-
-import ar.com.quantum.entity.Equipment;
 import ar.com.quantum.entity.Province;
 
 public class ProvinceDAOImpl extends BaseDAO<Province> implements  IDAO<Province>{

@@ -2,10 +2,8 @@ package ar.com.quantum.view;
 
 import android.os.Bundle;
 import android.widget.ListView;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import ar.com.quantum.entity.Tutorial;
 import ar.com.quantum.entity.TutorialListAdapter;
 import ar.com.quantum.satm.R;
