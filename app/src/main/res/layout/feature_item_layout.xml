@@ -25,7 +25,7 @@
             android:textStyle="bold"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:textColor="@color/colorQTurq"
+            android:textColor="@color/colorQTextGrey"
             android:id="@+id/textViewFeatureDescription"/>
 
     </LinearLayout>
