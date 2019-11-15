@@ -79,30 +79,45 @@ public class SingInPresenter extends BasePresenter implements ISingIn.Presenter{
         }
         else
             {
-                out = "Ingrese:\n";
+                String aux = "";
 
                 if (TextUtils.isEmpty(equipment.getImei())){
-                    out += " IMEI\n";
+                    aux += " IMEI\n";
                 }else{
-                    out += Utils.isValidIMEI(Long.valueOf(equipment.getImei())) ? "": " IMEI (debe ser uno válido)\n";
+
+                        if(!Utils.isValidIMEI(Long.valueOf(equipment.getImei())))
+                        {
+                            aux += " IMEI (debe ser uno válido)\n";
+                        }
                 }
                 if (TextUtils.isEmpty(user.getName())) {
-                    out += " Nombre\n";
+                    aux += " Nombre\n";
                 }
                 if (TextUtils.isEmpty(user.getSurname())) {
-                    out += " Apellido\n";
+                    aux += " Apellido\n";
                 }
                 if (TextUtils.isEmpty(user.getEmail())) {
-                    out += " Email\n";
+                    aux += " Email\n";
                 }
                 else
                     {
-                        out += Utils.isValidEmail(user.getEmail()) ? "": " Email (debe ser uno válido)\n";
+                        if(!Utils.isValidEmail(user.getEmail()))
+                        {
+                            aux +=  " Email (debe ser uno válido)\n";
+                        }
                     }
                 if (TextUtils.isEmpty(user.getPhoneNumber())) {
-                    out += " Teléfono\n";
+                    aux += " Teléfono\n";
+                }
+
+                if(!"".equals(aux))
+                {
+                    out = "Ingrese:\n" + aux;
                 }
         }
+
+
+
         return out;
     }
 }
