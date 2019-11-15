@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@color/colorWhite" >
+    android:background="@color/colorWhite">
 
     <include android:id="@+id/singInToolbar" layout="@layout/toolbar" />
 
@@ -22,6 +22,7 @@
         style="@style/Base.Widget.MaterialComponents.TextInputEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
         android:background="@null"
         android:hint="IMEI"
         android:padding="10dp"
@@ -41,7 +42,9 @@
         android:padding="10dp"
         android:singleLine="true"
         android:maxLength="100"
-        android:textColorHint="@color/colorQTextGrey" />
+        android:textColorHint="@color/colorQTextGrey"
+        android:backgroundTint="@color/colorPrimaryDark"
+        app:backgroundTint="@color/colorPrimaryDark"/>
 
     <EditText
         android:id="@+id/surname"
@@ -89,7 +92,7 @@
         android:layout_height="wrap_content"
         android:prompt="@string/spinner_title"
         android:spinnerMode="dialog"
-        android:padding="10dp"
+        android:padding="5dp"
         style="@style/localityITem"/>
 
     <LinearLayout

@@ -37,19 +37,16 @@ public class SingInPresenter extends BasePresenter implements ISingIn.Presenter{
     public void performLogin(Equipment equipment) {
 
         User user = equipment.getUser();
+        String messageValidations = this.messageValidations(equipment);
 
-        if(TextUtils.isEmpty(equipment.getImei()) ||
-           TextUtils.isEmpty(user.getName()) ||
-           TextUtils.isEmpty(user.getSurname()) ||
-           TextUtils.isEmpty(user.getEmail()) ||
-           TextUtils.isEmpty(user.getPhoneNumber())
-         )
+        if(messageValidations == null)
         {
-         this.sinInview.loginValidations(this.messageValidations(equipment));
+           this.sinInmodel.addEquipmentUser(equipment);
         }
         else
         {
-            this.sinInmodel.addEquipmentUser(equipment);
+           this.sinInview.loginValidations(messageValidations);
+
         }
 
     }
@@ -69,7 +66,7 @@ public class SingInPresenter extends BasePresenter implements ISingIn.Presenter{
     private String messageValidations(Equipment equipment){
 
         User user = equipment.getUser();
-        String out = "Ingrese:\n";
+        String out = null;
 
         if(TextUtils.isEmpty(equipment.getImei()) &&
            TextUtils.isEmpty(user.getName()) &&
@@ -78,31 +75,33 @@ public class SingInPresenter extends BasePresenter implements ISingIn.Presenter{
            TextUtils.isEmpty(user.getPhoneNumber())
         )
         {
-            out += " IMEI, Nombre, Apellido, Email y Teléfono";
+            out = "Ingrese:\n IMEI, Nombre, Apellido, Email y Teléfono";
         }
         else
             {
-            if (TextUtils.isEmpty(equipment.getImei())){
-                out += " IMEI\n";
-            }else{
-                //out += Utils.isValidIMEI(Long.valueOf(user.getEmei())) ? "": " IMEI (debe ser uno valido)\n";
-            }
-            if (TextUtils.isEmpty(user.getName())) {
-                out += " Nombre\n";
-            }
-            if (TextUtils.isEmpty(user.getSurname())) {
-                out += " Apellido\n";
-            }
-            if (TextUtils.isEmpty(user.getEmail())) {
-                out += " Email\n";
-            }
-            else
-                {
-                    out += Utils.isValidEmail(user.getEmail()) ? "": " Email (debe ser uno valido)\n";
+                out = "Ingrese:\n";
+
+                if (TextUtils.isEmpty(equipment.getImei())){
+                    out += " IMEI\n";
+                }else{
+                    out += Utils.isValidIMEI(Long.valueOf(equipment.getImei())) ? "": " IMEI (debe ser uno válido)\n";
                 }
-            if (TextUtils.isEmpty(user.getPhoneNumber())) {
-                out += " Teléfono\n";
-            }
+                if (TextUtils.isEmpty(user.getName())) {
+                    out += " Nombre\n";
+                }
+                if (TextUtils.isEmpty(user.getSurname())) {
+                    out += " Apellido\n";
+                }
+                if (TextUtils.isEmpty(user.getEmail())) {
+                    out += " Email\n";
+                }
+                else
+                    {
+                        out += Utils.isValidEmail(user.getEmail()) ? "": " Email (debe ser uno válido)\n";
+                    }
+                if (TextUtils.isEmpty(user.getPhoneNumber())) {
+                    out += " Teléfono\n";
+                }
         }
         return out;
     }

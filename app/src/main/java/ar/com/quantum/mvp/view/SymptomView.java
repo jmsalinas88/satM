@@ -1,5 +1,6 @@
 package ar.com.quantum.mvp.view;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -49,6 +50,15 @@ public class SymptomView extends BaseView implements ISymptom.View{
 
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent symptom = new Intent(SymptomView.this, FeatureView.class);
+        Equipment equipment = (Equipment)getIntent().getSerializableExtra(INTENT_EQUIPMENT_KEY);
+        symptom.putExtra(INTENT_EQUIPMENT_KEY, equipment);
+        startActivity(symptom);
+        finish();
 
     }
 }

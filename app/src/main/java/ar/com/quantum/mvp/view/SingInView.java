@@ -37,6 +37,7 @@ public class SingInView extends BaseView implements ISingIn.View{
         this.setCommonsToolbarTitle(R.id.singInToolbar,TITLES_BY_STEP[STEP]);
         this.provinces = (Spinner) findViewById(R.id.provinces);
         this.imei = (EditText)findViewById(R.id.imei);
+        this.imei.requestFocus();
         this.name = (EditText)findViewById(R.id.name);
         this.surname = (EditText)findViewById(R.id.surname);
         this.email = (EditText)findViewById(R.id.email);
@@ -92,5 +93,11 @@ public class SingInView extends BaseView implements ISingIn.View{
         toast.show();
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent equipment = new Intent(SingInView.this, EquipmentView.class);
+        startActivity(equipment);
+        finish();
 
+    }
 }

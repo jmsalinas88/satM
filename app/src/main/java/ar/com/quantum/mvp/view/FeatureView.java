@@ -52,4 +52,14 @@ public class FeatureView extends BaseView implements IFeature.View {
             }
         });
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent singIn = new Intent(FeatureView.this, SingInView.class);
+        Equipment equipment = (Equipment)getIntent().getSerializableExtra(INTENT_EQUIPMENT_KEY);
+        singIn.putExtra(INTENT_EQUIPMENT_KEY, equipment);
+        startActivity(singIn);
+        finish();
+
+    }
 }
