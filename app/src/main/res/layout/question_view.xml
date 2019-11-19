@@ -8,67 +8,67 @@
 
     <include layout="@layout/toolbar" android:id="@+id/symptomToolbar"/>
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:src="@drawable/logo_quantum_jpg" />
+    <include layout="@layout/commons_logo_layout"/>
+
+    <include
+        android:id="@+id/llProgressBar"
+        android:visibility="gone"
+        layout="@layout/circular_loader_animation"/>
 
     <TextView
+        android:id="@+id/questionTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="¿Duracion de bateria mayor a cuatro horas?"
         android:textSize="30dp"
-        android:textColor="@color/colorQTurq"
+        android:textColor="#68A8FA"
         android:gravity="center"
         android:textStyle="bold"
         android:padding="10dp"/>
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:src="@drawable/quantum_q_t_4" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="30dp">
+        android:paddingRight ="80dp"
+        android:paddingLeft ="80dp"
+        android:paddingTop="10dp">
 
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
             android:layout_weight="50"
             android:orientation="vertical"
-            android:gravity="right"
-            android:paddingRight="5dp">
+            android:paddingRight="1dp">
 
             <Button
-                android:layout_width="wrap_content"
+                android:id="@+id/btnQuestionYes"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/rounded_button"
                 android:gravity="center"
                 android:text="Si"
-                android:paddingTop="10dp"
-                android:textColor="@color/colorWhite" />
+                android:textColor="@color/colorWhite"
+                android:background="@drawable/si_btn_circle_background"/>
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
             android:layout_weight="50"
             android:orientation="vertical"
             android:gravity="left"
-            android:paddingLeft="5dp">
+            android:paddingLeft="1dp">
 
             <Button
-                android:layout_width="wrap_content"
+                android:id="@+id/btnQuestionNo"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/rounded_button"
                 android:gravity="center"
                 android:text="No"
-                android:paddingTop="10dp"
-                android:textColor="@color/colorWhite" />
+                android:textColor="@color/colorWhite"
+                android:background="@drawable/no_btn_circle_background"
+                />
 
         </LinearLayout>
 

@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import java.util.ArrayList;
 import java.util.List;
 import ar.com.quantum.entity.Equipment;
 import ar.com.quantum.entity.Feature;
@@ -42,11 +41,10 @@ public class FeatureView extends BaseView implements IFeature.View {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Feature selectedFeature = (Feature) parent.getAdapter().getItem(position);
                 Equipment equipment = (Equipment)getIntent().getSerializableExtra(INTENT_EQUIPMENT_KEY);
-                List<Feature> featureList = new ArrayList<>();
-                featureList.add(selectedFeature);
-                equipment.setFeatures(featureList);
+                equipment.addFeature(selectedFeature);
                 Intent singIn = new Intent(FeatureView.this, SymptomView.class);
                 singIn.putExtra(INTENT_EQUIPMENT_KEY, equipment);
+                singIn.putExtra(INTENT_SELECTED_FEATURE_KEY, selectedFeature);
                 startActivity(singIn);
                 finish();
             }

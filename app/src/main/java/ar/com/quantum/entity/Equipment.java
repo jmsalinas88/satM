@@ -1,7 +1,8 @@
 package ar.com.quantum.entity;
 
 import java.io.Serializable;
-import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 
 public class Equipment implements Serializable {
@@ -11,7 +12,7 @@ public class Equipment implements Serializable {
     private String description;
     private String image;
     private String imei;
-    private List<Feature> features;
+    private Map<Integer, Feature> features;
     private User user;
 
     public Equipment() {
@@ -49,14 +50,6 @@ public class Equipment implements Serializable {
         this.imei = imei;
     }
 
-    public List<Feature> getFeatures() {
-        return features;
-    }
-
-    public void setFeatures(List<Feature> features) {
-        this.features = features;
-    }
-
     public User getUser() {
         return user;
     }
@@ -71,5 +64,22 @@ public class Equipment implements Serializable {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+
+    public Map<Integer, Feature> getFeatures() {
+        return features;
+    }
+
+    public void setFeatures(Map<Integer, Feature> features) {
+        this.features = features;
+    }
+
+    public void addFeature(Feature feature){
+        if(this.features == null)
+        {
+            this.features = new TreeMap<>();
+        }
+        this.features.put(feature.getId(), feature);
     }
 }

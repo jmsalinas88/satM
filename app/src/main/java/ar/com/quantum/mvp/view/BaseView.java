@@ -11,8 +11,13 @@ import ar.com.quantum.satm.R;
 
 public abstract class BaseView extends AppCompatActivity {
 
-    protected final String INTENT_EQUIPMENT_KEY = "EQUIPMENT";
+
     protected final String[] TITLES_BY_STEP = {"Selecciona tu Quantum", "Dejanos tu contacto"};
+
+    protected final String INTENT_EQUIPMENT_KEY = "EQUIPMENT";
+    protected final String INTENT_SELECTED_SYMPTOM_KEY = "SELECTED_SYMPTOM";
+    protected final String INTENT_SELECTED_FEATURE_KEY = "SELECTED_FEATURE";
+
 
     protected  void setCommonsToolbarTitle(int toolbarId, String title){
         androidx.appcompat.widget.Toolbar toolbar = (Toolbar)findViewById(toolbarId);

@@ -1,6 +1,8 @@
 package ar.com.quantum.entity;
 
-public class Tutorial {
+import java.io.Serializable;
+
+public class Tutorial implements Serializable {
 
     private String title = null;
 

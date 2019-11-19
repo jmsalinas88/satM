@@ -2,13 +2,16 @@ package ar.com.quantum.entity;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
 
 public class Feature implements Serializable {
 
     private Integer id;
     private String description = null;
     private String image;
-    private List<Symptom> symptoms;
+    private Map<Integer, Symptom> symptoms;
 
     public Feature() {}
 
@@ -36,12 +39,19 @@ public class Feature implements Serializable {
         this.image = image;
     }
 
-    public List<Symptom> getSymptoms() {
+    public Map<Integer, Symptom> getSymptoms() {
         return symptoms;
     }
 
-    public void setSymptoms(List<Symptom> symptoms) {
+    public void setSymptoms(Map<Integer, Symptom> symptoms) {
         this.symptoms = symptoms;
     }
 
+    public void addSymptom(Symptom symptom){
+        if(this.symptoms == null)
+        {
+            this.symptoms = new TreeMap<>();
+        }
+        this.symptoms.put(symptom.getId(), symptom);
+    }
 }

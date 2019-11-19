@@ -8,8 +8,8 @@
         android:roundIcon="@drawable/quantum_q"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name="ar.com.quantum.mvp.view.IssueView"></activity>
+        <activity android:name="ar.com.quantum.mvp.view.HtmlView"></activity>
+        <activity android:name="ar.com.quantum.mvp.view.IssueView" />
         <activity android:name="ar.com.quantum.mvp.view.SupportView" />
         <activity android:name="ar.com.quantum.mvp.view.SuggestionView" />
         <activity android:name="ar.com.quantum.mvp.view.QuestionView" />
@@ -31,7 +31,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

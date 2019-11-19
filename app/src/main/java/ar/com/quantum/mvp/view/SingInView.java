@@ -1,7 +1,12 @@
 package ar.com.quantum.mvp.view;
 
+import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.provider.Settings;
+import android.telephony.TelephonyManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -15,6 +20,9 @@ import ar.com.quantum.mvp.presenter.SingInPresenter;
 import ar.com.quantum.satm.R;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.RequiresPermission;
+import androidx.core.content.ContextCompat;
 
 
 public class SingInView extends BaseView implements ISingIn.View{
@@ -38,6 +46,7 @@ public class SingInView extends BaseView implements ISingIn.View{
         this.provinces = (Spinner) findViewById(R.id.provinces);
         this.imei = (EditText)findViewById(R.id.imei);
         this.imei.requestFocus();
+        this.imei.setText(this.getDeviceIMEI());
         this.name = (EditText)findViewById(R.id.name);
         this.surname = (EditText)findViewById(R.id.surname);
         this.email = (EditText)findViewById(R.id.email);
@@ -98,6 +107,9 @@ public class SingInView extends BaseView implements ISingIn.View{
         Intent equipment = new Intent(SingInView.this, EquipmentView.class);
         startActivity(equipment);
         finish();
+    }
 
+    public String getDeviceIMEI() {
+        return "358993065878112";
     }
 }

@@ -6,6 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import java.util.List;
@@ -30,6 +33,18 @@ public class TutorialListAdapter  extends ArrayAdapter<Tutorial> {
         convertView = inflater.inflate(mResource, parent, false);
         CheckBox checkBox = (CheckBox)convertView.findViewById(R.id.tutorialCheckBox);
         checkBox.setText(tutorial.getTitle());
+
+        TextView textView = (TextView)convertView.findViewById(R.id.tutorialTextViewVer);
+        textView.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Toast toast = Toast.makeText(mContext, "Ver! !", Toast.LENGTH_SHORT);
+                toast.show();
+            }
+        });
+
+
         return convertView;
     }
 }

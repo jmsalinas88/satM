@@ -3,6 +3,8 @@ package ar.com.quantum.mvp.view;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
+import ar.com.quantum.entity.Tutorial;
 import ar.com.quantum.satm.R;
 
 public class MainView extends BaseView {
@@ -17,7 +19,7 @@ public class MainView extends BaseView {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent welcome = new Intent(MainView.this, EquipmentView.class);
+                Intent welcome = new Intent(MainView.this, QuestionView.class);
                 startActivity(welcome);
                 finish();
             }

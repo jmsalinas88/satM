@@ -7,17 +7,28 @@
     android:background="@color/colorWhite" >
 
     <include layout="@layout/toolbar" android:id="@+id/symptomToolbar"/>
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:src="@drawable/logo_quantum_jpg" />
+    <include layout="@layout/commons_logo_layout"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Aca va alguna recomendacion para el usuario"
-        android:gravity="center"/>
+        android:text="El rendimiento de la bateria se encuentra dentro de los parametros normales, te recomendamos: "
+        android:textSize="20dp"
+        android:textColor="#68A8FA"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:padding="10dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="El rendimiento de la bateria se encuentra dentro de los parametros normales, te recomendamos: "
+        android:textSize="20dp"
+        android:textColor="#68A8FA"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:padding="10dp"/>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,13 +38,16 @@
         android:padding="10dp">
 
         <Button
+            android:id="@+id/buttonSuggestion"
+            style="@android:style/Widget.DeviceDefault.Light.Button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/rounded_button"
             android:gravity="center"
             android:text="Volver al menu principal"
-            android:padding="10dp"
-            android:textColor="@color/colorWhite" />
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/rounded_button"
+            android:padding="10dp"/>
 
     </LinearLayout>
 

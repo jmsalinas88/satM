@@ -27,11 +27,9 @@ public class SymptomView extends BaseView implements ISymptom.View{
         super.setCommonsToolbarTitle(R.id.symptomToolbar,TOOL_BAR_TILTE);
         this.symptomListView = (ListView)findViewById(R.id.symptomListView);
         this.presenter = new SymptomPresenter(this, this);
-
         Equipment equipment = (Equipment)getIntent().getSerializableExtra(INTENT_EQUIPMENT_KEY);
-        Feature feature = equipment.getFeatures().get(0);
-
-        this.presenter.showSymptomList(feature);
+        Feature selectedFeature = (Feature)getIntent().getSerializableExtra(INTENT_SELECTED_FEATURE_KEY);
+        this.presenter.showSymptomList(selectedFeature);
     }
 
     @Override
@@ -43,10 +41,16 @@ public class SymptomView extends BaseView implements ISymptom.View{
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                // showInformation(this, "Informacion", "En construccion", "ACEPTAR");
-                /*Intent singIn = new Intent(SymptomView.this, QuestionView.class);
-                startActivity(singIn);
-                finish();*/
+                Symptom selectedSymptom = (Symptom) parent.getAdapter().getItem(position);
+                Equipment equipment = (Equipment)getIntent().getSerializableExtra(INTENT_EQUIPMENT_KEY);
+                Feature selectedFeature = (Feature)getIntent().getSerializableExtra(INTENT_SELECTED_FEATURE_KEY);
+                selectedFeature.addSymptom(selectedSymptom);
+                Intent questionView = new Intent(SymptomView.this, QuestionView.class);
+                questionView.putExtra(INTENT_EQUIPMENT_KEY, equipment);
+                questionView.putExtra(INTENT_SELECTED_FEATURE_KEY, selectedFeature);
+                questionView.putExtra(INTENT_SELECTED_SYMPTOM_KEY, selectedSymptom);
+                startActivity(questionView);
+                finish();
 
             }
         });
@@ -56,7 +60,9 @@ public class SymptomView extends BaseView implements ISymptom.View{
     public void onBackPressed() {
         Intent symptom = new Intent(SymptomView.this, FeatureView.class);
         Equipment equipment = (Equipment)getIntent().getSerializableExtra(INTENT_EQUIPMENT_KEY);
+        Feature selectedFeature = (Feature)getIntent().getSerializableExtra(INTENT_SELECTED_FEATURE_KEY);
         symptom.putExtra(INTENT_EQUIPMENT_KEY, equipment);
+        symptom.putExtra(INTENT_SELECTED_FEATURE_KEY, selectedFeature);
         startActivity(symptom);
         finish();
 
