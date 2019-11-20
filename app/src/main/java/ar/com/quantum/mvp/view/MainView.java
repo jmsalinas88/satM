@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import ar.com.quantum.entity.Question;
+import ar.com.quantum.entity.Suggestion;
 import ar.com.quantum.entity.Tutorial;
 import ar.com.quantum.satm.R;
 
@@ -19,7 +21,7 @@ public class MainView extends BaseView {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent welcome = new Intent(MainView.this, QuestionView.class);
+                Intent welcome = new Intent(MainView.this, TutorialView.class);
                 startActivity(welcome);
                 finish();
             }

@@ -11,15 +11,12 @@
     <string name="login_failed">"Login failed"</string>
     <string name="spinner_title">Provincia</string>
 
-    <string name="htmltext">
-        <![CDATA[
+    <string name="your_string">
           <h1>Heading</h1>
           <h3>Sub-heading</h3>
           <p></p>
           <br>Content/body</br>
           <br>More text</br>
-        ]]>
     </string>
-
 
 </resources>

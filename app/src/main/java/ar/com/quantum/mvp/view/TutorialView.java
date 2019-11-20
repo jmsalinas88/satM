@@ -1,5 +1,8 @@
 package ar.com.quantum.mvp.view;
 
+import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -14,7 +17,10 @@ import ar.com.quantum.satm.R;
 
 public class TutorialView extends BaseView {
 
-    private final String TOOL_BAR_TILTE = "Tutorial: Verificacion RED MOVIL";
+    private final String TOOL_BAR_TILTE = "Tutorial: Verificacion RED";
+
+
+    Dialog myDialog;
 
 
     @Override
@@ -22,7 +28,12 @@ public class TutorialView extends BaseView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tutorial_view);
         super.setCommonsToolbarTitle(R.id.tutorialToolbar, TOOL_BAR_TILTE);
+
         ListView tutorialListView = (ListView)findViewById(R.id.tutorialListView);
+
+        myDialog = new Dialog(this);
+        myDialog.setContentView(R.layout.tutorial_content);
+
 
         Tutorial t1 = new Tutorial("Este es el item 1");
         Tutorial t2= new Tutorial("Este es el item 2");
@@ -38,18 +49,24 @@ public class TutorialView extends BaseView {
         //tutorialList.add(t4);
         //tutorialList.add(t5);
         //tutorialList.add(t6);
+
+
+
+
+
         TutorialListAdapter adapter = new TutorialListAdapter(this,R.layout.tutorial_item_layout, tutorialList);
         tutorialListView.setAdapter(adapter);
 
-        tutorialListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        /*tutorialListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Toast toast = Toast.makeText(getApplicationContext(), "Ver! !", Toast.LENGTH_SHORT);
-                toast.show();
+                myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                myDialog.show();
+
 
             }
-        });
+        });*/
 
     }
 }
