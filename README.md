@@ -1,1 +1,1 @@
-# App de asistencia técnica para celulares Android. (# Modelos Quantum.)
+# App de asistencia técnica para celulares Android (Modelos Quantum)
